@@ -16,7 +16,7 @@
     </div>
     <div class="right">
         <div class="signuphead">
-            <h1>Sign up</h1>
+            <h1>Log in </h1>
             <p class="firstp">This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started.</p>
             <p class="secondp"><br>You know you want to.</p>
         </div>
@@ -24,36 +24,20 @@
         <div class="form">
             <h1 class="formhead">Let's do this!</h1>
             <form id="myform">
-                <label for="firstname">First Name
-                    <input type="text" id="firstname" name="firstname" required>
-                    <div id="firstnameError" class="error"></div>
-                </label>
-                <label for="lastname">Last Name
-                    <input type="text" id="lastname" name="lastname" required>
-                    <div id="lastnameError" class="error"></div>
-                </label>
                 <label for="email">Email
                     <input type="email" id="email" name="email" required autocomplete="off">
                     <div id="emailError" class="error"></div>
                 </label>
-                <label for="phone">Phone Number
-                    <input type="phone" id="phone" name="phone" required pattern='[0-9]{11}'>
-                    <div id="phoneError" class="error"></div>
-                </label>
                 <label for="password">Password
                     <input type="password" id="password" name="password" required pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'>
                     <div id="passwordError" class="error"></div>
-                </label>
-                <label for="confirmpassword">Confirm Password
-                    <input type="password" id="confirmpassword" name="confirmpassword" required>
-                    <div id="confirmpasswordError" class="error"></div>                
-                </label>             
+                </label>    
             </form>
         </div>
     </div>
     <div class="signupbutton">
-        <button id="signupbutton" type="submit" form="myform">Sign Up</button>
-        <p>Already have an account?<a href="http://127.0.0.1:5500/Loginform.html">Log in</a> </p>
+        <button id="signupbutton" type="submit" form="myform">Log in</button>
+        <p>Don't have an account? Sign up now <a href="http://127.0.0.1:5500/signupform.html">Sign up</a> </p>
     </div>
 </div>
 </div>
@@ -70,20 +54,7 @@
     const lastnameError = document.querySelector('#lastnameError');
     const emailError = document.querySelector('#emailError');
     const phoneError = document.querySelector('#phoneError');
-    firstname.addEventListener("input", function (event) {
-      if (firstname.value === '') {
-        firstnameError.textContent = 'Please type in your first name.';
-      } else {
-        firstnameError.textContent = '';
-      }
-    }); 
-    lastname.addEventListener("input", function (event) {
-      if (lastname.value === '') {
-        lastnameError.textContent = 'Please type in your last name.';
-      } else {
-        lastnameError.textContent = '';
-      }
-    });
+     
     email.addEventListener("input", function (event) {
         if (email.validity.typeMismatch) {
         emailError.textContent = 'Please enter in a valid Email. ex(johnSmith@email.com)';
@@ -91,13 +62,7 @@
         emailError.textContent = '';
       }
     }); 
-    phone.addEventListener("input", function (event) {
-        if (phone.validity.patternMismatch) {
-        phoneError.textContent = 'Please enter in a 10 digit phone number';
-      } else {
-        phoneError.textContent = '';
-      }     
-    }); 
+   
     password.addEventListener("input", function (event) {
       if (password.validity.patternMismatch){
         const currentValue = password.value;
@@ -135,13 +100,7 @@
       }
     });
     
-    confirmpassword.addEventListener("input" , function (event){
-        if(confirmpassword.value !== password.value){
-            confirmpasswordError.textContent = 'Passwords do not match.';
-        } else {
-            confirmpasswordError.textContent = '';
-        }
-    });
+   
     </script>
 
 </body>

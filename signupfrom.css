@@ -12,6 +12,8 @@ body{
   margin: 0%;
   padding: 0%;
   justify-content: center;
+  height: 99vh;
+  background-color: #000000;
 }
 
 .splitscreen{
@@ -19,10 +21,11 @@ body{
     justify-content: center;
     font-family: myfont , Dosis ,monospace,  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue'; 
     font-size: large;
-    color: #fff;    
+    color: #ffffff;    
     flex-wrap: row;
     margin: 0%;
     padding: 0%;
+    height: 99vh;
 
 }
 .left{
@@ -30,14 +33,14 @@ body{
     position: relative;
     width: 60vw;
     min-width: 345px;
-    height: 150vh;
-    background-image: url("https://images.unsplash.com/photo-1528604891270-c2d9c3d1fc0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
-    background-color: aliceblue;
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1635952346904-95f2ccfcd029?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aW5kaWFuJTIwc3dlZXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60x ");
+    background-color: rgb(0, 0, 0);
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(255, 255, 255);
     
 }
 .logo {
@@ -58,6 +61,7 @@ body{
     align-items: start;
     flex-grow: 2;
     background-color: rgb(22, 17, 17);
+    height: 100vh;
   }
   .form{
     
