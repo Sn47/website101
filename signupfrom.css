@@ -30,7 +30,7 @@ body{
     position: relative;
     width: 60vw;
     min-width: 345px;
-    height: 100vh;
+    height: 150vh;
     background-image: url("https://images.unsplash.com/photo-1528604891270-c2d9c3d1fc0b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
     background-color: aliceblue;
     background-size: cover;
