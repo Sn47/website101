@@ -12,7 +12,6 @@ body{
   margin: 0%;
   padding: 0%;
   justify-content: center;
-  height: 99vh;
   background-color: #000000;
 }
 
@@ -21,11 +20,10 @@ body{
     justify-content: center;
     font-family: myfont , Dosis ,monospace,  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue'; 
     font-size: large;
-    color: #ffffff;    
+    color: #fff;    
     flex-wrap: row;
     margin: 0%;
     padding: 0%;
-    height: 99vh;
 
 }
 .left{
@@ -33,43 +31,129 @@ body{
     position: relative;
     width: 60vw;
     min-width: 345px;
-    height: 100vh;
-    background-image: url("https://images.unsplash.com/photo-1635952346904-95f2ccfcd029?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aW5kaWFuJTIwc3dlZXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60x ");
+    height: 96vh;
     background-color: rgb(0, 0, 0);
     background-size: cover;
+    background-size: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(255, 255, 255);
-}
-.logo {
-    align-items: left;
-    justify-content: left;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 35%;
-}
-.right {
-    display: flex;
-    width: 60vw;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    flex-grow: 2;
-    background-color: rgb(22, 17, 17);
-    height: 100vh;
-  }
-  .form{
+    color: rgb(0, 0, 0);
     
+}
+.container{
+  position: absolute;
+  width: 60vw;
+    min-width: 345px;
+    height: 110vh;
+  overflow: hidden;
+}
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  width: 60vw;
+  display: flex;
+  animation: fade 2s infinite;
+  object-fit: cover;  
+  height: 50;
+  max-width: 100%;
+  margin-left: 140px;
+}
+/*Area of images*/
+.wrapper{
+  width: 60vw;
+  display: flex;
+  animation: slide 8s infinite ;
+  object-fit: cover;  
+  height: 50;
+  max-width: 100%;
+  margin-left: 140px;
+}
+.logo{
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 45%;
+      margin-left: 25px;
+
+
+}
+
+
+/*Animation activated by keyframes*/
+/* @keyframes slide{
+  0%{
+      transform: translateX(0);
+  }
+  25%{
+      transform: translateX(-45);
+  } 
+  30%{
+      transform: translateX(-10%);
+  }
+  50%{
+      transform: translateX(-50%);
+  }
+  55%{
+      transform: translateX(-55%);
+  }
+  75%{
+      transform: translateX(-60%);
+  }
+  80%{
+      transform: translateX(-60%);
+  }
+  100%{
+      transform: translateX(-60%);
+  }
+} */
+
+/* fading */
+#slideshow { 
+  margin: 50px auto; 
+  position: relative; 
+  width: 240px; 
+  height: 240px; 
+  padding: 10px; 
+  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+
+#slideshow  div { 
+  position: absolute; 
+  top: 10px; 
+  left: 10px; 
+  right: 10px; 
+  bottom: 10px; 
+}
+
+/* fading end */
+.rightlog {
+  z-index: 9;
+  display: flex;
+  width: 125vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  flex-grow: 2;
+  background-color: rgb(22, 17, 17);
+
+
+  }
+
+  .form{
+    width: 67vw;
     display: flex;
     justify-content: center;
     flex-direction: column;
     background-color: rgb(18, 12, 13);
     padding: auto;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.123);   
+
   }
   .formhead , .submit , .right h1{
     font-weight: bolder;
@@ -114,7 +198,7 @@ body{
     margin-right: auto;
 
   }
-  
+
   button {
     margin-top: 15px;
     margin-right: auto;
@@ -133,22 +217,23 @@ body{
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    font-family: myfont , monospace,  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue'; 
+    font-family:  myfont ,Dosis,monospace,  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue'; 
+    font-size:medium;
   }
   
   button:before {
     content: "";
     background: linear-gradient(
       45deg,
-      #ffffff,
+      #ff0000,
       #ff7300,
-      #ffa600,
-      #000000,
-      #976c0d,
-      #e2a024,
-      #eea74a,
-      #793803,
-      #ffcd81
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
     );
     position: absolute;
     top: -2px;
@@ -192,7 +277,7 @@ body{
   }
   input[type=text], input[type=password] , input[type=email] , input[type=phone]  {
     width:100%;
-    border:2px solid #aaa;
+    border:2px solid #000000;
     border-radius:4px;
     margin:8px 0;
     outline:none;
@@ -216,6 +301,8 @@ body{
     color: rgb(255, 69, 100);
     position: absolute;
   }
+
+  
   @media screen and (max-width: 850px) {
   
     .splitscreen{
@@ -226,7 +313,6 @@ body{
     .left{
       width: 100vw;
       height: 20rem;
-
     }
   
     .right, .signuphead , .form , .submit{
@@ -249,7 +335,4 @@ body{
     label {
       margin-bottom: 25px;
     }
-    .left {
-      height: 150vh; 
-    margin-top: 18%;   }
   }
