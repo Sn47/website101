@@ -40,12 +40,12 @@ transition: 0.2s,  0.2s;
 .logo{
     margin-top: 12px;
     margin-left: 45px;
-    height: 90px;
+    height: 50px;
 }
 
 ion-icon {
     color: rgb(255, 255, 255);
-    font-size: 52px; 
+    font-size: 35px; 
     --ionicon-stroke-width: 16px;
     margin-top: 5px;
     margin-right: 15px;
@@ -91,7 +91,7 @@ a {
     text-decoration: none;
     font-family: myfont , Dosis ;
     color: #e07b07;
-    font-size: 28px;
+    font-size: 18px;
     padding: 25px;
 }
 a:hover{
@@ -341,4 +341,3 @@ body{
 .t_over:nth-child(7):hover ~ .tilt-box{transform:rotateX(20deg) rotateY(20deg);}
 .t_over:nth-child(8):hover ~ .tilt-box{transform: rotateX(20deg) rotateY(0deg)}
 .t_over:nth-child(9):hover ~ .tilt-box{transform: rotateX(20deg) rotateY(-20deg)}
-
