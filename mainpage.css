@@ -40,7 +40,7 @@ transition: 0.2s,  0.2s;
 .logo{
     margin-top: 12px;
     margin-left: 45px;
-    height: 50px;
+    height: 60px;
 }
 
 ion-icon {
@@ -86,6 +86,8 @@ ion-icon:hover{
 }
 button{
     margin-bottom: 15px;
+    text-align: center;
+    justify-content: center;
 }
 a {
     text-decoration: none;
@@ -129,10 +131,10 @@ body{
     
 }
 .picture{
-    height: 120vh;
+    height: 110vh;
     transform: rotate(90deg);
-    margin-left: 980px;
-    margin-top: -790px;
+    margin-left: 720px;
+    margin-top: -430px;
     border-radius: 50px;
     animation: air 50s infinite ;
 
@@ -164,14 +166,14 @@ body{
     color: #e07b07;
     font-family: myfont,Dosis;
     margin-left: 45px;
-    font-size: 80px;
+    font-size: 50px;
     max-width: 50vw;
-    margin-top: -50px;
+  
 
 }
 .discrip{
     margin-top: -45px;
-    font-size: 40px;
+    font-size: 25px;
     display: -webkit-box;
     -webkit-line-clamp: 10;
     -webkit-box-orient: vertical;
@@ -182,19 +184,19 @@ body{
 .orderbutton {
     appearance: none;
     background-color: #e07b07;
-    border: 5px solid #e07b07;
+    border: 2px solid #e07b07;
     border-radius: 15px;
     box-sizing: border-box;
     color: #000000;
     cursor: pointer;
     /* display: inline-block; */
     font-family: myfont,Dosis;
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 600;
     line-height: normal;
     margin: 0;
-    min-height: 90px;
-    min-width: 50;
+    min-height: 60px;
+    min-width: 0;
     outline: none;
     /* padding: 16px 24px; */
     text-align: center;
@@ -205,7 +207,7 @@ body{
     touch-action: manipulation;
     width: 20%;
     /* will-change: transform; */
-    margin-left: 20px;
+    
 }
   
   .orderbutton:disabled {
@@ -237,22 +239,22 @@ body{
     border-radius: 50x;
     justify-content: center;
     height: 100vh;
-     background-color: #e07b07; 
+    background-color: #e07b07; 
     margin-top: 0px;
     z-index: 90;
     font-family: myfont,Dosis;
-    font-size: 40px;
+    font-size: 30px;
 }
 .column {
     float: left;
     width: 20%;
-    padding: 0 222px;
+    padding: 0 150px;
     align-items: center;
     justify-content: center;
   }
   
   /* Remove extra left and right margins, due to padding in columns */
-  .row {margin-top: -550px;
+  .row {margin-top: -400px;
     font-family: myfont,Dosis;
     margin-left: -50px;
 }
@@ -282,12 +284,11 @@ body{
 
 
 .tilt-box-wrap{
-	width: 350px;
-	height: 300px;
+	width: 250px;
+	height: 150px;
 	position: relative;
 	transition: all 0.6s ease-out;
-	perspective: 1000px;
-  margin-top: -230px;
+  margin-top: -100px;
 }
 .tilt-box-wrap:hover{
 	transition: all 0.3s linear;
@@ -298,10 +299,10 @@ body{
         box-shadow: 0 4px 8px 0 rgb(0, 0, 0); /* this adds the "card" effect */
         text-align: center;
         background-color: white;
-        height: 500px;
+        height: 300px;
         border-radius: 20px;
        
-	font-size: 25px;
+	font-size: 20px;
   font: weight 50px;;
 	position: relative;
 	display: flex;
