@@ -367,6 +367,9 @@ body{
 .footer__addr {
   margin-right: 1.25em;
   margin-bottom: 2em;
+  text-align: center;
+  align-self: center;
+  align-content: center;
 }
 
 .footer__logo {
@@ -397,6 +400,10 @@ body{
   margin: 0.6em 0;
   font-size: 1rem;
   padding: 0 1.3em;
+  text-align: center;
+  align-self: center;
+  align-content: center;
+  margin-left: 585px;
 }
 
 
@@ -441,6 +448,7 @@ body{
   
   .footer__addr {
     flex: 1 0px;
+    align-items: center;
   }
   
   .footer__nav {
@@ -484,4 +492,10 @@ li p {
   75% {
     transform: rotate(-15deg);
   }
+}
+
+.logo1{margin-top: 12px;
+  margin-left: 10px;
+  height: 80px;
+
 }
