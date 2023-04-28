@@ -20,8 +20,7 @@ header{
     flex-direction: row;
     margin: 0%;
     padding: 0%;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: 10vh;
     /* background-color: #000000; */
     margin-top: 0px;
@@ -77,10 +76,8 @@ ion-icon:hover{
     flex: 2;
     font-size: medium;
     font-family: myfont,Dosis;
-    flex-wrap: wrap;
-    align-items: center;
     color: rgb(255, 255, 255);
-    justify-content: space-around;
+    justify-content: center;
     font-size: 28px;
     margin-top: 15px;
     margin-right: 20px;
@@ -122,7 +119,7 @@ a:hover{
   }
   
 body{
-  margin-inline: auto;
+
   margin: 0%;
   padding: 0%;
   justify-content: center;
@@ -140,7 +137,6 @@ body{
     margin-top: -430px;
     border-radius: 50px;
     animation: air 50s infinite ;
-    max-width: 100%;
 
 }
 @keyframes air {
@@ -571,33 +567,3 @@ li p {
   height: 80px;
 
 }
-
-
-
-@media (max-width: 991px){
-
-  html{
-font-size: 55%;
-display : inline-block}
- header{
-padding: 1.5rem 2rem;}}
-
-@media (max-width: 991px){
-  #menu-btn{
-  display: inline-block;
-}
-  header  .nav{
-    position: absolute;
-    top: 100%; right: 0;
-    background: #fff;
-    width: 30rem;
-    height: calc(100vh - 9.5rem);
-  }}
-
-  header .navbar a{
-    color: #e07b07;
-display: block;
-margin : 1.5rem;
-padding:  0.5rem;
-font-size: 2rem;
-  }
