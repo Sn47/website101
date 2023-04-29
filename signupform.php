@@ -17,7 +17,8 @@
       $userId = maxUserId();
       // Checking if email alread exists or not
       $query = "Select * from users where email = '$email'" ;
-      if(mysqli_query($con,$query)){
+      $result = mysqli_query($con,$query);
+      if($result && mysqli_num_rows($result) > 0){
         echo '<script type="text/javascript">';
         echo ' alert("Email Already Exists")';  //not showing an alert box.
         echo '</script>';

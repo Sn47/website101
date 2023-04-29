@@ -1,51 +1,56 @@
-@import url('https://fonts.google.com/betterspecimen/Dosis/tester');
+@import url("https://fonts.google.com/betterspecimen/Dosis/tester");
 @font-face {
-    font-family: myfont;
-    src: url("dosis-variablefont_wght-webfont.woff2") format("woff2"),
-         url("dosis-variablefont_wght-webfont.woff") format("woff"),
-         url("dosis-variablefont_wght-webfont.ttf"),
-         url("dosis-variablefont_wght-webfont.svg#dosis-variablefont_wght") format("svg"),
-         url("dosis-variablefont_wght-webfont.eot"),
-         url("dosis-variablefont_wght-webfont.eot?#iefix") format("embedded-opentype");
-        }
-body{
+  font-family: myfont;
+  src: url("dosis-variablefont_wght-webfont.woff2") format("woff2"),
+    url("dosis-variablefont_wght-webfont.woff") format("woff"),
+    url("dosis-variablefont_wght-webfont.ttf"),
+    url("dosis-variablefont_wght-webfont.svg#dosis-variablefont_wght")
+      format("svg"),
+    url("dosis-variablefont_wght-webfont.eot"),
+    url("dosis-variablefont_wght-webfont.eot?#iefix")
+      format("embedded-opentype");
+}
+body {
   margin: 0%;
   padding: 0%;
   justify-content: center;
   background-color: #000000;
 }
-
-.splitscreen{
-    display: flex;
-    justify-content: center;
-    font-family: myfont , Dosis ,monospace,  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue'; 
-    font-size: large;
-    color: #fff;    
-    flex-wrap: row;
-    margin: 0%;
-    padding: 0%;
-
+.error {
+  color: red;
+  position: relative;
 }
-.left{
-    flex-grow: 1;
-    position: relative;
-    width: 60vw;
-    min-width: 345px;
-    height: 96vh;
-    background-color: rgb(0, 0, 0);
-    background-size: cover;
-    background-size: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    
+.splitscreen {
+  display: flex;
+  justify-content: center;
+  font-family: myfont, Dosis, monospace, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue";
+  font-size: large;
+  color: #fff;
+  flex-wrap: row;
+  margin: 0%;
+  padding: 0%;
 }
-.container{
+.left {
+  flex-grow: 1;
+  position: relative;
+  width: 60vw;
+  min-width: 345px;
+  height: 96vh;
+  background-color: rgb(0, 0, 0);
+  background-size: cover;
+  background-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0, 0, 0);
+}
+.container {
   position: absolute;
   width: 60vw;
-    min-width: 345px;
-    height: 110vh;
+  min-width: 345px;
+  height: 110vh;
   overflow: hidden;
 }
 .slideshow-container {
@@ -55,35 +60,32 @@ body{
   width: 60vw;
   display: flex;
   animation: fade 2s infinite;
-  object-fit: cover;  
+  object-fit: cover;
   height: 50;
   max-width: 100%;
   margin-left: 140px;
 }
 /*Area of images*/
-.wrapper{
+.wrapper {
   width: 60vw;
   display: flex;
-  animation: slide 8s infinite ;
-  object-fit: cover;  
+  animation: slide 8s infinite;
+  object-fit: cover;
   height: 50;
   max-width: 100%;
   margin-left: 140px;
 }
-.logo{
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 45%;
-      margin-left: 25px;
-
-
+.logo {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  margin-left: 25px;
 }
-
 
 /*Animation activated by keyframes*/
 /* @keyframes slide{
@@ -114,21 +116,21 @@ body{
 } */
 
 /* fading */
-#slideshow { 
-  margin: 50px auto; 
-  position: relative; 
-  width: 240px; 
-  height: 240px; 
-  padding: 10px; 
-  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+#slideshow {
+  margin: 50px auto;
+  position: relative;
+  width: 240px;
+  height: 240px;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
-#slideshow  div { 
-  position: absolute; 
-  top: 10px; 
-  left: 10px; 
-  right: 10px; 
-  bottom: 10px; 
+#slideshow div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
 }
 
 /* fading end */
@@ -141,198 +143,204 @@ body{
   align-items: start;
   flex-grow: 2;
   background-color: rgb(22, 17, 17);
+}
 
+.form {
+  width: 67vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(18, 12, 13);
+  padding: auto;
 
+  margin-bottom: 30px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.123);
+}
+.formhead,
+.submit,
+.right h1 {
+  font-weight: bolder;
+}
+.right h1,
+.right p {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+form {
+  display: flex;
+  width: 60vw;
+  flex-flow: row wrap;
+  gap: 1rem;
+  font-size: 1rem;
+}
+label {
+  position: relative;
+  width: 11rem;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: left;
+  justify-content: left;
+}
+a {
+  text-decoration: none;
+  color: rgb(96, 255, 4);
+}
+.submit {
+  margin-top: 2rem;
+}
+
+.signbutton p {
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: 63px;
+  padding: 0.6em 2em;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-family: myfont, Dosis, monospace, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue";
+  font-size: medium;
+}
+
+button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
   }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 
-  .form{
-    width: 67vw;
-    display: flex;
-    justify-content: center;
+button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+button:hover {
+  opacity: 0.7;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="phone"] {
+  width: 100%;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="phone"]:focus {
+  border-color: rgb(0, 158, 96);
+  box-shadow: 0 0 8px 0 rgb(0, 158, 96);
+}
+
+input:invalid:focus {
+  border: 2px solid rgb(255, 69, 100);
+  box-shadow: 0 0 8px 0 rgb(255, 69, 100);
+}
+.error {
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: rgb(255, 69, 100);
+  position: absolute;
+}
+
+@media screen and (max-width: 850px) {
+  .splitscreen {
     flex-direction: column;
-    background-color: rgb(18, 12, 13);
-    padding: auto;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.123);   
+    margin: 0%;
+    padding: 0%;
+  }
+  .left {
+    width: 100vw;
+    height: 20rem;
+  }
 
-  }
-  .formhead , .submit , .right h1{
-    font-weight: bolder;
-      
-  }
-  .right h1, .right p{
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  form {
-    display: flex;
-    width: 60vw;
-    flex-flow: row wrap;
-    gap: 1rem;
-    font-size: 1rem;
-    margin-bottom: 30px;
-    
-  }
-  label {
-    position: relative;
-    width: 11rem;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    align-items: left;
-    justify-content: left;
-
-  }  
-  a {
-    text-decoration: none;
-    color: rgb(96, 255, 4);
-    
-  }
+  .right,
+  .signuphead,
+  .form,
   .submit {
-    margin-top: 2rem;
-  }
-  
-  .signbutton p{
-    justify-content: center;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-
-  }
-
-  button {
-    margin-top: 15px;
-    margin-right: auto;
-    margin-left: 63px ;
-    padding: 0.6em 2em;
-    border: none;
     justify-content: center;
-    align-items: center;
-    outline: none;
-    color: rgb(255, 255, 255);
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    font-family:  myfont ,Dosis,monospace,  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue'; 
-    font-size:medium;
-  }
-  
-  button:before {
-    content: "";
-    background: linear-gradient(
-      45deg,
-      #ff0000,
-      #ff7300,
-      #fffb00,
-      #48ff00,
-      #00ffd5,
-      #002bff,
-      #7a00ff,
-      #ff00c8,
-      #ff0000
-    );
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing-button-85 20s linear infinite;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
-  }
-  
-  @keyframes glowing-button-85 {
-    0% {
-      background-position: 0 0;
-    }
-    50% {
-      background-position: 400% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-  }
-  
-  button:after {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #222;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-  }
-  button:hover {
-    opacity: 0.7;
-  }
-  input[type=text], input[type=password] , input[type=email] , input[type=phone]  {
-    width:100%;
-    border:2px solid #000000;
-    border-radius:4px;
-    margin:8px 0;
-    outline:none;
-    padding:8px;
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  input[type=text]:focus , input[type=password]:focus , input[type=email]:focus , input[type=phone]:focus  {
-    border-color:rgb(0, 158, 96);
-    box-shadow:0 0 8px 0 rgb(0, 158, 96);
   }
 
-  input:invalid:focus {
-    border: 2px solid rgb(255, 69, 100);
-    box-shadow:0 0 8px 0 rgb(255, 69, 100);
+  .form,
+  form,
+  .submit {
+    width: 100vw;
+    justify-content: center;
   }
-  .error {
-    font-family: monospace;
-    font-size: .7rem;
-    color: rgb(255, 69, 100);
-    position: absolute;
-  }
+}
 
-  
-  @media screen and (max-width: 850px) {
-  
-    .splitscreen{
-      flex-direction: column;
-      margin: 0%;
-      padding: 0%;
-    }
-    .left{
-      width: 100vw;
-      height: 20rem;
-    }
-  
-    .right, .signuphead , .form , .submit{
-        width: 100vw;
-      display: flex;
-      flex-direction: column;
-      flex-flow: row wrap;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .form, form, .submit{
-      width: 100vw;
-      justify-content: center;
-    }
+@media screen and (max-width: 505px) {
+  label {
+    margin-bottom: 25px;
   }
-  
-  @media screen and (max-width: 505px) {
-    
-    label {
-      margin-bottom: 25px;
-    }
-  }
+}

@@ -1,8 +1,38 @@
-
 <?php
 
-?>
+  include("connection.php");
+  include("functions.php");
 
+  if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    if ( !empty($email)&& !empty($password) ){
+      
+      // Checking if email alread exists or not
+      $query = "Select * from users where email = '$email' AND password = '$password'" ;
+      $result = mysqli_query($con,$query);
+
+      if($result && mysqli_num_rows($result)> 0){
+        $userData = mysqli_fetch_assoc($result);
+        header("Location: mainpage.php");
+        die;
+      }
+      else{
+        $log = false;
+      }
+
+      
+      
+
+        
+      
+      
+    }
+
+  }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +69,7 @@
                     <div id="passwordError" class="error"></div>
                 </label>    
             </form>
+            <p class = "error">Invalid Login</p>
         </div>
     </div>
     <div class="signupbutton">
