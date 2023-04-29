@@ -29,6 +29,7 @@
           echo "Error: ". mysqli_error($con);
         }
         header("Location:loginform.php");
+        die;
       }
 
       
