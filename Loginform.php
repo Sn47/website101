@@ -1,7 +1,7 @@
 
 <?php
 
->
+?>
 
 
 <!DOCTYPE html>
@@ -29,7 +29,7 @@
         <div>
         <div class="form">
             <h1 class="formhead">Let's do this!</h1>
-            <form id="myform" method = "post">
+            <form id="myform" method = "POST">
                 <label for="email">Email
                     <input type="email" id="email" name="email" required autocomplete="off">
                     <div id="emailError" class="error"></div>

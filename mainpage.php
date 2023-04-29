@@ -1,7 +1,10 @@
 <?php
 session_start();
 
-    $_SESSION;
+
+    include("connection.php");
+    include("functions.php");
+
 ?>
 
 
@@ -24,21 +27,21 @@ session_start();
 
 <header>
     
-   <a href="Loginform.html"> <img class="logo" src="orangeone.png" alt="the odin project logo"  ><img></a>
+   <a href="mainpage.php" style = "padding : 25px"> <img class="logo" src="orangeone.png" alt="the odin project logo"  ><img></a>
 
     <nav class="navbar">
 
-        <button class="raise"><a href="#home">HOME</a></button>
-        <button class="raise"><a href="#explore">EXPLORE</a></button>
-        <button class="raise"><a href="#about">ABOUT</a>    </button>
-        <button class="raise"><a href="#review">REVIEW</a>  </button>  
+        <button class="raise"><a href="#home" style = "padding : 25px">HOME</a></button>
+        <button class="raise"><a href="#explore" style = "padding : 25px">EXPLORE</a></button>
+        <button class="raise"><a href="#about" style = "padding : 25px">ABOUT</a>    </button>
+        <button class="raise"><a href="#review" style = "padding : 25px">REVIEW</a>  </button>  
         
     </nav>
 
     <div class="icons">
         <ion-icon class="search" name="search-outline" colour></ion-icon>
         <ion-icon name="cart-outline"></ion-icon>
-        <ion-icon name="person-circle-outline"></ion-icon>
+        <a href = "signupform.php"> <ion-icon name="person-circle-outline"></ion-icon> </a>
         
         
 

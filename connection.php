@@ -2,6 +2,11 @@
 
 
 $dbhost = "localhost";
-$dbuser = "root";
+$dbuser = "root";         
 $dbpass = "";
 $dbname = "soghatdb";
+
+
+if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname) ){
+    die("Failed To Connect");
+} 

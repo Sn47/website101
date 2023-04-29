@@ -1,6 +1,46 @@
 
 <?php
 
+  include("connection.php");
+  include("functions.php");
+
+  if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $firstName = $_POST['firstname'];
+    $lastName = $_POST['lastname'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmPassword  = $_POST['confirmpassword'];
+    $phone = $_POST['phone']; 
+
+    if (!empty($firstName) && !empty($lastName) && !empty($email)&& !empty($password) && !empty($confirmPassword) && !empty($phone)){
+      
+      $userId = maxUserId();
+      // Checking if email alread exists or not
+      $query = "Select * from users where email = '$email'" ;
+      if(mysqli_query($con,$query)){
+        echo '<script type="text/javascript">';
+        echo ' alert("Email Already Exists")';  //not showing an alert box.
+        echo '</script>';
+      }
+      else{
+        $query = "INSERT INTO users (UserId, Fname, Lname, Password, email, phone) VALUES ('$userId','$firstName', '$lastName', '$password', '$email', '$phone')";
+        
+        if(!mysqli_query($con,$query)){
+          echo "Error: ". mysqli_error($con);
+        }
+        header("Location:loginform.php");
+      }
+
+      
+      
+
+        
+      
+      
+    }
+
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -10,21 +50,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
-    <link rel="stylesheet" href="./signupfrom.css">
+    <link rel="stylesheet" href="signupfrom.css">
     <title>Signup</title>
 </head>
 <body>
     <div class="splitscreen">
-    <div class="left"><img class="logo" src="soghat.png" alt="the odin project logo"></img>
-                   <div></div>
-                   <div class="right">  
-
-
-
-
-
-                   
-
+    <div class="left"><a href ="mainpage.php">  <img class="logo" src="soghat.png" alt="the odin project logo"></img></a>
     </div>
     <div class="right">
         <div class="signuphead">
@@ -35,7 +66,7 @@
         <div>
         <div class="form">
             <h1 class="formhead">Let's do this!</h1>
-            <form id="myform">
+            <form id="myform" method="POST">
                 <label for="firstname">First Name
                     <input type="text" id="firstname" name="firstname" required>
                     <div id="firstnameError" class="error"></div>
