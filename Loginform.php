@@ -1,3 +1,9 @@
+
+<?php
+
+>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +29,7 @@
         <div>
         <div class="form">
             <h1 class="formhead">Let's do this!</h1>
-            <form id="myform">
+            <form id="myform" method = "post">
                 <label for="email">Email
                     <input type="email" id="email" name="email" required autocomplete="off">
                     <div id="emailError" class="error"></div>
@@ -37,7 +43,7 @@
     </div>
     <div class="signupbutton">
         <button zid="signupbutton" type="submit" form="myform"><a href="mainage.html">Log in</a></button>
-        <p>Don't have an account? Sign up now <a href="signupform.html">Sign up</a> </p>
+        <p>Don't have an account? Sign up now <a href="signupform.php">Sign up</a> </p>
     </div>
 </div>
 </div>

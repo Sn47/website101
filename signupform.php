@@ -1,7 +1,12 @@
+
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
@@ -11,8 +16,15 @@
 <body>
     <div class="splitscreen">
     <div class="left"><img class="logo" src="soghat.png" alt="the odin project logo"></img>
-        
-        
+                   <div></div>
+                   <div class="right">  
+
+
+
+
+
+                   
+
     </div>
     <div class="right">
         <div class="signuphead">
