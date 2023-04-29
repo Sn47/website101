@@ -18,7 +18,7 @@
     <div class="splitscreen">
     <div class="left">
         
-        <img class="logo" src="soghat.png" alt="the odin project logo"></img>
+      <a href ="mainpage.php"><img class="logo" src="soghat.png" alt="the odin project logo"></img></a>
     </div>
     <div class="right">
         <div class="signuphead">

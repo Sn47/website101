@@ -97,7 +97,7 @@
     </div>
     <div class="signupbutton">
         <button id="signupbutton" type="submit" form="myform">Sign Up</button>
-        <p>Already have an account?<a href="Loginform.html">Log in</a> </p>
+      <p>Already have an account?<a href="loginform.php">Log in</a> </p>
     </div>
 </div>
 </div>
