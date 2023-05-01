@@ -2,7 +2,7 @@
 
   include("connection.php");
   include("functions.php");
-
+  $log = true;
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -14,19 +14,18 @@
       $result = mysqli_query($con,$query);
 
       if($result && mysqli_num_rows($result)> 0){
+        
         $userData = mysqli_fetch_assoc($result);
+        $defImg = file_get_contents("localhost/website101/images/defProfImg.png");
+        $query = "Insert into users (image) values ('$defImg') ";
+
+        $_SESSION['user_id'] = $userData['UserId'];
         header("Location: mainpage.php");
         die;
       }
       else{
         $log = false;
       }
-
-      
-      
-
-        
-      
       
     }
 
@@ -59,7 +58,7 @@
         <div>
         <div class="form">
             <h1 class="formhead">Let's do this!</h1>
-            <form id="myform" method = "POST">
+            <form id="myform" method = "POST" enctype="multipart/form-data ">
                 <label for="email">Email
                     <input type="email" id="email" name="email" required autocomplete="off">
                     <div id="emailError" class="error"></div>
@@ -69,7 +68,10 @@
                     <div id="passwordError" class="error"></div>
                 </label>    
             </form>
-            <p class = "error">Invalid Login</p>
+            <?php 
+              if (!$log) 
+                echo '<p class = "error">Invalid Login</p>' 
+            ?>
         </div>
     </div>
     <div class="signupbutton">

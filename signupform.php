@@ -3,7 +3,7 @@
 
   include("connection.php");
   include("functions.php");
-
+  $emailExists = false;
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $firstName = $_POST['firstname'];
     $lastName = $_POST['lastname'];
@@ -19,9 +19,7 @@
       $query = "Select * from users where email = '$email'" ;
       $result = mysqli_query($con,$query);
       if($result && mysqli_num_rows($result) > 0){
-        echo '<script type="text/javascript">';
-        echo ' alert("Email Already Exists")';  //not showing an alert box.
-        echo '</script>';
+        $emailExists = true;
       }
       else{
         $query = "INSERT INTO users (UserId, Fname, Lname, Password, email, phone) VALUES ('$userId','$firstName', '$lastName', '$password', '$email', '$phone')";
@@ -32,12 +30,6 @@
         header("Location:loginform.php");
         die;
       }
-
-      
-      
-
-        
-      
       
     }
 
@@ -80,6 +72,12 @@
                 <label for="email">Email
                     <input type="email" id="email" name="email" required autocomplete="off">
                     <div id="emailError" class="error"></div>
+                    <?php
+                      if($emailExists){
+                        echo '<div id= "eErr" class = "error">Email Already Exists</div>';
+                      }
+
+                    ?>
                 </label>
                 <label for="phone">Phone Number
                     <input type="phone" id="phone" name="phone" required pattern='[0-9]{11}'>
@@ -115,6 +113,7 @@
     const lastnameError = document.querySelector('#lastnameError');
     const emailError = document.querySelector('#emailError');
     const phoneError = document.querySelector('#phoneError');
+    const eErr = document.querySelector('#eErr');
     firstname.addEventListener("input", function (event) {
       if (firstname.value === '') {
         firstnameError.textContent = 'Please type in your first name.';
@@ -130,6 +129,7 @@
       }
     });
     email.addEventListener("input", function (event) {
+        eErr.textContent = '';
         if (email.validity.typeMismatch) {
         emailError.textContent = 'Please enter in a valid Email. ex(johnSmith@email.com)';
       } else {
