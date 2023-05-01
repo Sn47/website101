@@ -53,7 +53,7 @@ session_start();
                     echo '<a href = "signupform.php"><ion-icon name="person-circle-outline"></ion-icon></a>';
                 }
                 else{
-                    echo /*html*/'<a class = "profile_size" href = "#" ><img class = "profile_size profile_pic" src="data:image/jpg;base64,'.base64_encode($_SESSION['image']).'">  </a>';
+                    echo /*html*/'<a class = "profile_size" href = "profile.php" ><img class = "profile_size profile_pic" src="data:image/jpg;base64,'.base64_encode($_SESSION['image']).'">  </a>';
                 }
             ?>
         </div>
