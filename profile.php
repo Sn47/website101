@@ -2,38 +2,35 @@
 session_start();
 
     include ("connection.php");
-    $msg;
-    if(isset($_GET["submit"])){
+    $msg = '';
+    if(isset($_POST["submit"])){
         session_destroy();
         header("Location: mainpage.php");
         die;
     }
-
-
-    if(isset($_GET['goBackButton'])){
+    else if(isset($_POST['goBackButton'])){
         header("Location: mainpage.php");
         die;
     }
 
 
-    if(isset($_GET['uploadPic'])){
-        print_r($_FILES);
-        if(!empty($_FILES["image"]["name"])){
-            $fileName = basename($_FILES["image"]["name"]);
+    else if(isset($_POST['uploadPic'])){
+        if(!empty($_FILES["changeAvt"]["name"])){
+            $fileName = basename($_FILES["changeAvt"]["name"]);
             $extension = pathinfo($fileName,PATHINFO_EXTENSION);
 
             $ext = array('jpg','png','jpeg','gif');
             if(in_array($extension,$ext)){
-                $defImg = addSlashes(file_get_contents($_FILES['image']['tmp_name']));
+                $defImg = addSlashes(file_get_contents($_FILES['changeAvt']['tmp_name']));
                
-                $query = "update from users set image = '$defImg' where UserId = ".$_SESSION['user_id'];
+                $query = "update users set image = '$defImg' where UserId = ".$_SESSION['user_id'];
                 
                 if(!mysqli_query($con,$query)){
                   $msg =  "Error: ". mysqli_error($con);
                 }
                 else{
                     $msg = "Successful Upload";
-                    $_SESSION['image'] = $defImg;
+                    
                 }
                 
             }
