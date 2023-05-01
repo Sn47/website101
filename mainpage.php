@@ -61,6 +61,7 @@ session_start();
                 }
                 else{
 <<<<<<< HEAD
+<<<<<<< HEAD
                     echo /*html*/'<a class = "profile_size" href = "#" ><img class = "profile_size profile_pic" src="data:image/jpg;base64,'.base64_encode($_SESSION['image']).'">  </a>';
 =======
 
@@ -75,6 +76,9 @@ session_start();
                     }
                     
 >>>>>>> parent of fd22f91 (Revert "LOGIN AND SIGN IN COMPLETE")
+=======
+                    echo /*html*/'<a class = "profile_size" href = "#" ><img class = "profile_size profile_pic" src="data:image/jpg;base64,'.base64_encode($_SESSION['image']).'">  </a>';
+>>>>>>> parent of 76f4f3a (changeAvatar Started)
                 }
             ?>
             </div>
