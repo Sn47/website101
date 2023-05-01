@@ -1,6 +1,6 @@
 
 <?php
-
+session_start();
   include("connection.php");
   include("functions.php");
   $emailExists = false;
@@ -22,7 +22,8 @@
         $emailExists = true;
       }
       else{
-        $query = "INSERT INTO users (UserId, Fname, Lname, Password, email, phone) VALUES ('$userId','$firstName', '$lastName', '$password', '$email', '$phone')";
+        $defImg = addSlashes(file_get_contents("http://localhost/website101/images/defProfImg.png"));
+        $query = "insert into users (UserId, Fname, Lname, Password, email, phone,image) VALUES ('$userId','$firstName', '$lastName', '$password', '$email', '$phone','$defImg')";
         
         if(!mysqli_query($con,$query)){
           echo "Error: ". mysqli_error($con);

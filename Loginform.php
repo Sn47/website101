@@ -1,5 +1,5 @@
 <?php
-
+session_start();
   include("connection.php");
   include("functions.php");
   $log = true;
@@ -16,10 +16,9 @@
       if($result && mysqli_num_rows($result)> 0){
         
         $userData = mysqli_fetch_assoc($result);
-        $defImg = file_get_contents("localhost/website101/images/defProfImg.png");
-        $query = "Insert into users (image) values ('$defImg') ";
-
+        
         $_SESSION['user_id'] = $userData['UserId'];
+        $_SESSION['image'] = $userData['image'];
         header("Location: mainpage.php");
         die;
       }
@@ -40,7 +39,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
-    <link rel="stylesheet" href="./signupfrom.css">
+    <link rel="stylesheet" href="./signupfrom.css?v=<?php echo time(); ?>">
     <title>Login</title>
 </head>
 <body>
@@ -62,16 +61,18 @@
                 <label for="email">Email
                     <input type="email" id="email" name="email" required autocomplete="off">
                     <div id="emailError" class="error"></div>
+                    <?php 
+                      if (!$log) 
+                        echo '<div class = "error">Invalid Login</div>' 
+                    ?>
                 </label>
+                
                 <label for="password">Password
                     <input type="password" id="password" name="password" required pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'>
                     <div id="passwordError" class="error"></div>
                 </label>    
             </form>
-            <?php 
-              if (!$log) 
-                echo '<p class = "error">Invalid Login</p>' 
-            ?>
+            
         </div>
     </div>
     <div class="signupbutton">
