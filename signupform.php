@@ -2,7 +2,7 @@
 session_start();
   include("connection.php");
   include("functions.php");
-  $emailExists = false;
+
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $firstName = $_POST['firstname'];
     $lastName = $_POST['lastname'];
@@ -18,7 +18,9 @@ session_start();
       $query = "Select * from users where email = '$email'" ;
       $result = mysqli_query($con,$query);
       if($result && mysqli_num_rows($result) > 0){
-        $emailExists = true;
+        echo '<script type="text/javascript">';
+        echo ' alert("Email Already Exists")';  //not showing an alert box.
+        echo '</script>';
       }
       else{
         $defImg = addSlashes(file_get_contents("http://localhost/website101/images/defProfImg.png"));
@@ -30,6 +32,12 @@ session_start();
         header("Location:loginform.php");
         die;
       }
+
+      
+      
+
+        
+      
       
     }
 
@@ -105,6 +113,7 @@ session_start();
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <script>
         const password = document.querySelector('#password');
         const confirmpassword = document.querySelector('#confirmpassword');
@@ -161,6 +170,113 @@ session_start();
                     result += '\n';
                 }
 
+=======
+        <div>
+        <div class="form">
+            <h1 class="formhead">Let's do this!</h1>
+            <form id="myform" method="POST">
+                <label for="firstname">First Name
+                    <input type="text" id="firstname" name="firstname" required>
+                    <div id="firstnameError" class="error"></div>
+                </label>
+                <label for="lastname">Last Name
+                    <input type="text" id="lastname" name="lastname" required>
+                    <div id="lastnameError" class="error"></div>
+                </label>
+                <label for="email">Email
+                    <input type="email" id="email" name="email" required autocomplete="off">
+                    <div id="emailError" class="error"></div>
+                </label>
+                <label for="phone">Phone Number
+                    <input type="phone" id="phone" name="phone" required pattern='[0-9]{11}'>
+                    <div id="phoneError" class="error"></div>
+                </label>
+                <label for="password">Password
+                    <input type="password" id="password" name="password" required pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'>
+                    <div id="passwordError" class="error"></div>
+                </label>
+                <label for="confirmpassword">Confirm Password
+                    <input type="password" id="confirmpassword" name="confirmpassword" required>
+                    <div id="confirmpasswordError" class="error"></div>                
+                </label>             
+            </form>
+        </div>
+    </div>
+    <div class="signupbutton">
+        <button id="signupbutton" type="submit" form="myform">Sign Up</button>
+      <p>Already have an account?<a href="loginform.php">Log in</a> </p>
+    </div>
+</div>
+</div>
+<script>
+    const password = document.querySelector('#password');
+    const confirmpassword = document.querySelector('#confirmpassword');
+    const firstname = document.querySelector('#firstname');
+    const lastname = document.querySelector('#lastname');
+    const email = document.querySelector('#email');
+    const phone = document.querySelector('#phone');
+    const passwordwError = document.querySelector('#passwordError');
+    const confirmpasswordError = document.querySelector('#confirmpasswordError');
+    const firstnameError = document.querySelector('#firstnameError');
+    const lastnameError = document.querySelector('#lastnameError');
+    const emailError = document.querySelector('#emailError');
+    const phoneError = document.querySelector('#phoneError');
+    firstname.addEventListener("input", function (event) {
+      if (firstname.value === '') {
+        firstnameError.textContent = 'Please type in your first name.';
+      } else {
+        firstnameError.textContent = '';
+      }
+    }); 
+    lastname.addEventListener("input", function (event) {
+      if (lastname.value === '') {
+        lastnameError.textContent = 'Please type in your last name.';
+      } else {
+        lastnameError.textContent = '';
+      }
+    });
+    email.addEventListener("input", function (event) {
+        if (email.validity.typeMismatch) {
+        emailError.textContent = 'Please enter in a valid Email. ex(johnSmith@email.com)';
+      } else {
+        emailError.textContent = '';
+      }
+    }); 
+    phone.addEventListener("input", function (event) {
+        if (phone.validity.patternMismatch) {
+        phoneError.textContent = 'Please enter in a 10 digit phone number';
+      } else {
+        phoneError.textContent = '';
+      }     
+    }); 
+    password.addEventListener("input", function (event) {
+      if (password.validity.patternMismatch){
+        const currentValue = password.value;
+        const regExpCap = /[A-Z]/g;
+        const regExpDig = /[0-9]/g;
+        let result = '';
+        if (regExpCap.test(currentValue)){
+          result += '';
+        } else {
+          result += `Missing at least 1 capital letter. `;
+          result += '\n';
+        }
+        
+        
+        if (regExpDig.test(currentValue)){
+          result += '';
+        } else {
+          result += 'Missing at least 1 number. ';
+          result += '\n';
+        }
+        
+        if (currentValue.length < 9){
+          result += 'Password must be at least 8 characters. '
+          result += '\n';
+        } else {
+          result += '';
+        }
+>>>>>>> parent of 7349d1b (LoginPageStartPart2)
 
                 if (regExpDig.test(currentValue)) {
                     result += '';

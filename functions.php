@@ -10,4 +10,4 @@ function maxUserId(){
     return $row['maximum'] +1;
 }
 
-
+?>
