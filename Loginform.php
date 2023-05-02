@@ -1,5 +1,5 @@
 <?php
-session_start();
+
   include("connection.php");
   include("functions.php");
 
@@ -16,10 +16,17 @@ session_start();
       if($result && mysqli_num_rows($result)> 0){
         $userData = mysqli_fetch_assoc($result);
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         $_SESSION['user_id'] = $userData['UserId'];
 =======
 >>>>>>> parent of 7349d1b (LoginPageStartPart2)
+=======
+        $defImg = file_get_contents("localhost/website101/images/defProfImg.png");
+        $query = "Insert into users (image) values ('$defImg') ";
+
+        $_SESSION['user_id'] = $userData['UserId'];
+>>>>>>> parent of 119c2d5 (logindone)
         header("Location: mainpage.php");
         die;
       }
@@ -41,6 +48,7 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
     <head>
         <meta charset="UTF-8">
@@ -111,6 +119,32 @@ session_start();
         <div class="form">
             <h1 class="formhead">Let's do this!</h1>
             <form id="myform" method = "POST">
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
+    <link rel="stylesheet" href="./signupfrom.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="splitscreen">
+    <div class="left">
+        
+      <a href ="mainpage.php"><img class="logo" src="soghat.png" alt="the odin project logo"></img></a>
+    </div>
+    <div class="right">
+        <div class="signuphead">
+            <h1>Log in </h1>
+            <p class="firstp">This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started.</p>
+            <p class="secondp"><br>You know you want to.</p>
+        </div>
+        <div>
+        <div class="form">
+            <h1 class="formhead">Let's do this!</h1>
+            <form id="myform" method = "POST" enctype="multipart/form-data ">
+>>>>>>> parent of 119c2d5 (logindone)
                 <label for="email">Email
                     <input type="email" id="email" name="email" required autocomplete="off">
                     <div id="emailError" class="error"></div>
@@ -120,7 +154,14 @@ session_start();
                     <div id="passwordError" class="error"></div>
                 </label>    
             </form>
+<<<<<<< HEAD
             <p class = "error">Invalid Login</p>
+=======
+            <?php 
+              if (!$log) 
+                echo '<p class = "error">Invalid Login</p>' 
+            ?>
+>>>>>>> parent of 119c2d5 (logindone)
         </div>
     </div>
     <div class="signupbutton">

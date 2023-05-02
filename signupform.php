@@ -1,5 +1,5 @@
 <?php
-session_start();
+
   include("connection.php");
   include("functions.php");
 
@@ -23,8 +23,7 @@ session_start();
         echo '</script>';
       }
       else{
-        $defImg = addSlashes(file_get_contents("http://localhost/website101/images/defProfImg.png"));
-        $query = "insert into users (UserId, Fname, Lname, Password, email, phone,image) VALUES ('$userId','$firstName', '$lastName', '$password', '$email', '$phone','$defImg')";
+        $query = "INSERT INTO users (UserId, Fname, Lname, Password, email, phone) VALUES ('$userId','$firstName', '$lastName', '$password', '$email', '$phone')";
         
         if(!mysqli_query($con,$query)){
           echo "Error: ". mysqli_error($con);
