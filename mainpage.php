@@ -19,6 +19,7 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
+        <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="temp.css?v=<?php echo time(); ?>">
         <link rel=”stylesheet”
             href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow”
@@ -51,13 +52,17 @@ session_start();
             </nav>
 
             <div class="icons">
-                <ion-icon class="search" name="search-outline" colour></ion-icon>
-                <ion-icon name="cart-outline"></ion-icon>
+                <div class="fas fa-search" id="search-btn"></div>
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <!-- <ion-icon class="search" name="search-outline" colour></ion-icon>
+                <ion-icon name="cart-outline"></ion-icon> -->
+
+             
 
                 <?php
                 if($login === false)
                 {
-                    echo '<a href = "signupform.php"><ion-icon name="person-circle-outline"></ion-icon></a>';
+                    echo '<a href = "signupform.php"><div class="fas fa-user" id="user-btn"></div></a>';
                 }
                 else{
 
@@ -73,8 +78,19 @@ session_start();
                     
                 }
             ?>
+            <div class="fas fa-bars" id="menu-btn"></div>
             </div>
+            <div class="search-form">
+                    <input type="search" id="search-box" placeholder="search here..." >
+                    <label for="search-box" class="fas fa-search"></label>
 
+                </div>
+            <!-- <div class="cart-item-container">
+                <div class="cart-item">
+                    <span class="fas fa-time"></span>
+                    <img src="" alt="">
+                </div>
+            </div> -->
         </header>
 
         <section>
