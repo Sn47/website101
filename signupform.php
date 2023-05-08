@@ -45,7 +45,7 @@ session_start();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
-        <link rel="stylesheet" href="signupfrom.css">
+        <link rel="stylesheet" href="signupfrom.css?v=<?php echo time(); ?>">
         <title>Signup</title>
     </head>
 
@@ -98,6 +98,9 @@ session_start();
                             </label>
                         </form>
                     </div>
+                </div>
+                <div class="forgot-password">
+                    <a href="forgotPassword.php">Forgot Password?</a>
                 </div>
                 <div class="signupbutton">
                     <button id="signupbutton" type="submit" form="myform">Sign Up</button>

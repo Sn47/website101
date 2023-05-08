@@ -54,22 +54,21 @@ session_start();
             <div class="icons">
                 <div class="fas fa-search" id="search-btn"></div>
                 <div class="fas fa-shopping-cart" id="cart-btn"></div>
-                <!-- <ion-icon class="search" name="search-outline" colour></ion-icon>
-                <ion-icon name="cart-outline"></ion-icon> -->
 
-             
+
+
 
                 <?php
                 if($login === false)
                 {
-                    echo '<a href = "signupform.php"><div class="fas fa-user" id="user-btn"></div></a>';
+                    echo '<a class = "" href = "signupform.php"><div class="fas fa-user" id="user-btn"></div></a>';
                 }
                 else{
 
                     $result = mysqli_query($con,"select image from users where UserId = ".$_SESSION['user_id']);
                     if($result){
                         $image = mysqli_fetch_assoc($result);
-                        echo '<a class = "profile_size" href = "profile.php" ><img class = "profile_size profile_pic" src="data:image/jpg;base64,'.base64_encode($image['image']).'">  </a>';
+                        echo '<a  class = "avaSty" href = "profile.php" ><img class = "profile_size profile_pic" src="data:image/jpg;base64,'.base64_encode($image['image']).'">  </a>';
                     }
                     else{
                         echo 'Error';
@@ -78,13 +77,13 @@ session_start();
                     
                 }
             ?>
-            <div class="fas fa-bars" id="menu-btn"></div>
+                <div class="fas fa-bars" id="menu-btn"></div>
             </div>
             <div class="search-form">
-                    <input type="search" id="search-box" placeholder="search here..." >
-                    <label for="search-box" class="fas fa-search"></label>
+                <input type="search" id="search-box" placeholder="search here...">
+                <label for="search-box" class="fas fa-search"></label>
 
-                </div>
+            </div>
             <!-- <div class="cart-item-container">
                 <div class="cart-item">
                     <span class="fas fa-time"></span>
