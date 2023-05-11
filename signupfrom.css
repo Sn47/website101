@@ -238,12 +238,17 @@ input:invalid:focus {
   border: 2px solid rgb(255, 69, 100);
   box-shadow: 0 0 8px 0 rgb(255, 69, 100);
 }
-.error {
+.error,
+.succ {
   font-family: monospace;
   font-size: 0.7rem;
+  position: relative;
+}
+.error {
   color: rgb(255, 69, 100);
   position: relative;
 }
+
 @media screen and (max-width: 850px) {
   .splitscreen {
     flex-direction: column;
