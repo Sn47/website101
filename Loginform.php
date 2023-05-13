@@ -10,7 +10,7 @@ session_start();
     if ( !empty($email)&& !empty($password) ){
       
       // Checking if email alread exists or not
-      $query = "Select * from users where email = '$email' AND password = '$password'" ;
+      $query = "Select * from users where BINARY email = '$email' AND BINARY password = '$password'" ;
       $result = mysqli_query($con,$query);
 
       if($result && mysqli_num_rows($result)> 0){
@@ -77,6 +77,9 @@ session_start();
                         </form>
 
                     </div>
+                </div>
+                <div class="forgot-password">
+                    <a href="forgotPassword.php">Forgot Password?</a>
                 </div>
                 <div class="signupbutton">
                     <button zid="signupbutton" type="submit" form="myform"><a href="mainage.html">Log in</a></button>
