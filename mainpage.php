@@ -85,12 +85,34 @@ session_start();
                     <label for="search-box" class="fas fa-search"></label>
 
                 </div>
-            <!-- <div class="cart-item-container">
+            <div class="cart-item-container">
+                <h1>CART</h1>
                 <div class="cart-item">
-                    <span class="fas fa-time"></span>
-                    <img src="" alt="">
+                    <span class="fas fa-times"></span>
+                    <img src="gulab.jpg" alt="gulabjamun">
+                    <div class="content">
+                        <h3>Gulab jamun</h3>
+                        <div class="price">Rs10/-</div>
+                    </div>    
                 </div>
-            </div> -->
+                <div class="cart-item">
+                    <span class="fas fa-times"></span>
+                    <img src="jalebi.jpeg" alt="gulabjamun">
+                    <div class="content">
+                        <h3>Jalebi</h3>
+                        <div class="price">Rs15/-</div>
+                    </div>    
+                </div>
+                <div class="cart-item">
+                    <span class="fas fa-times"></span>
+                    <img src="lado.jpg" alt="gulabjamun">
+                    <div class="content">
+                        <h3>Lado</h3>
+                        <div class="price">Rs5/-</div>
+                    </div>    
+                </div>
+                <button class="check">CHECK OUT!</button>
+            </div>
         </header>
 
         <section>

@@ -100,7 +100,7 @@ session_start();
                     </div>
                 </div>
                 <div class="signupbutton">
-                    <button id="signupbutton" type="submit" form="myform">Sign Up</button>
+                    <button id="signupbutton" type="submit" form="myform"><a href="mainage.html">Sign up</a></button>
                     <p>Already have an account?<a href="loginform.php">Log in</a> </p>
                 </div>
             </div>
