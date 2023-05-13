@@ -1,26 +1,25 @@
 <?php
 session_start();
-
+echo $_SESSION['email'];
 include ("connection.php");
-if(isset($_POST["fgPass"])){
- 
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $pass  = $_POST['password'];
         $errMsg = "";
         $confirmPass  = $_POST['confirmpassword'];
         if(!empty($pass) && !empty($confirmPass)){
-            $query =  "UPDATE FROM users set Password = '$pass' where email = '".$SESSION ['email']."'";
+            $query =  "UPDATE users set Password = '$pass' where email = '".$_SESSION ['email']."'";
             if(!mysqli_query($con,$query)){
                 $errMsg = "Could not update password try again later";
             }
             else{
+                unset($_SESSION['email']);
                 header ("Location:Loginform.php");
+                die;
             }
         }
 
     }
-}
 ?>
 
 <!DOCTYPE html>
@@ -36,24 +35,30 @@ if(isset($_POST["fgPass"])){
     </head>
 
     <body>
-        <form id="myform" method="POST">
-            <label for="password">Password
+        <form class="rsPassForm center" id="myform" method="POST">
+            <div class="rsPassInpDiv">
+                <label for="password">Password</label>
                 <input type="password" id="password" name="password" required
                     pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'>
-                <div id="passwordError" class="error"></div>
-            </label>
-            <label for="confirmpassword">Confirm Password
+                <div style="color:red" id="passwordError" class="error"></div>
+
+            </div>
+            <div class="rsPassInpDiv">
+                <label for="confirmpassword">Confirm Password</label>
                 <input type="password" id="confirmpassword" name="confirmpassword" required>
-                <div id="confirmpasswordError" class="error"></div>
-            </label>
-            <?php
+                <div style="color:red" id="confirmpasswordError" class="error"></div>
+
+            </div>
+            <div class="rsPassInpDiv">
+                <?php
                 if(!empty($errMsg)){
             
                     echo '<div class="error"> '.$errMsg.'</div>';
                 }
             ?>
-            <div class="udtPassButt">
-                <button id="passUpdate" type="submit" form="myform">Update Password</button>
+                <div class="udtPassButt">
+                    <button id="passUpdate" type="submit" form="myform">Update Password</button>
+                </div>
             </div>
         </form>
     </body>
