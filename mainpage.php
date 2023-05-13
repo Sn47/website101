@@ -11,6 +11,7 @@ session_start();
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +55,7 @@ session_start();
             <div class="icons">
                 <div class="fas fa-search" id="search-btn"></div>
                 <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            
+
 
 
 
@@ -83,18 +84,18 @@ session_start();
                 <input type="search" id="search-box" placeholder="search here...">
                 <label for="search-box" class="fas fa-search"></label>
 
-                </div>
+            </div>
             <div class="cart-item-container">
                 <h1>CART</h1>
             </div>
-           <div class="cart-item-container">
+            <div class="cart-item-container">
                 <div class="cart-item">
                     <span class="fas fa-times"></span>
                     <img src="gulab.jpg" alt="gulabjamun">
                     <div class="content">
                         <h3>Gulab jamun</h3>
                         <div class="price">Rs10/-</div>
-                    </div>    
+                    </div>
                 </div>
                 <div class="cart-item">
                     <span class="fas fa-times"></span>
@@ -102,7 +103,7 @@ session_start();
                     <div class="content">
                         <h3>Jalebi</h3>
                         <div class="price">Rs15/-</div>
-                    </div>    
+                    </div>
                 </div>
                 <div class="cart-item">
                     <span class="fas fa-times"></span>
@@ -110,7 +111,7 @@ session_start();
                     <div class="content">
                         <h3>Lado</h3>
                         <div class="price">Rs5/-</div>
-                    </div>    
+                    </div>
                 </div>
                 <button class="check">CHECK OUT!</button>
             </div>

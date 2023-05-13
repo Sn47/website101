@@ -1,87 +1,81 @@
 <?php
 session_start();
 include ("connection.php");
+    require_once '../vendor/autoload.php';
+    use Symfony\Component\Mailer\Transport;
+    use Symfony\Component\Mailer\Mailer;
+    use Symfony\Component\Mime\Email;
     $log = true;
     $msg =$cdErrMsg= "";
     $succMsg = "";
-    $codeSend = false;
+    
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
-        if(isset($_POST["email"])){
-            $email = $_POST['email'];
-            
-            if ( !empty($email) ){
-                // Checking if email alread exists or not
-                $query = "Select * from users where BINARY email = '$email'" ;
+        if(isset($_POST["email"]) && isset($_POST['code'])){
+            $code = $_POST['code'];
+            $emailPost = $_POST['email'];
+            if ( !empty($emailPost) ){
+                // Checking if email already exists or not
+                $query = "Select * from users where BINARY email = '$emailPost'" ;
                 $result = mysqli_query($con,$query);
 
                 if($result && mysqli_num_rows($result)> 0){
-                
-                    $codeSend = true;
                     $token = bin2hex(random_bytes(8));
-                    
-                    $expires = date("U")+300;
-                    $query = "DELETE from pwdreset where pwdResetEmail = '$email'";
+                    date_default_timezone_set('Asia/Karachi');
+                    $expires = date('Y-m-d H:i:s', strtotime("+5 minute"));
+                    $query = "DELETE from pwdreset where pwdResetEmail = '$emailPost'";
                     if(!mysqli_query($con,$query)){
                         $msg = "Error in password reset password"; 
                         
                     }
-                    
-                    
                     else{
-                        $to = $email;
-                        $subject = "Reset Your Password Soghat";
-                        $message = /*html  */"<p>Your Code is ".$token.".</p>";
-                        //$header = "From: ahmadshykh2015@gmail.com\r\n";
-                        // $header .= "Reply-To: l217711@lhr.nu.edu.pk\r\n";
-                        // $header .= "Content-type: text/html\r\n";
-                        if (!mail($to,$subject,$message)){
-                            $msg = "Could not send mail";
+                        $transport = Transport::fromDsn('smtp://ahmadshykh2015@gmail.com:ikknbqpjpdphtlhz@smtp.gmail.com:587');
+                        $mailer = new Mailer($transport); 
+                        $email = (new Email());
+                        $email->from('ahmadshykh2015@gmail.com');
+                        $email->to($emailPost);
+                        $email->subject('Password Recovery');
+                        $email->html('<p>The token for your password recovery is <b>'.$token.'</b><br>Remember the code will retire in 5 minutes</p>');
+                        $mailer->send($email);
+                        
+                        $query = "INSERT INTO pwdReset (pwdResetEmail,pwdResetToken,pwdResetExpires) VALUES ('$emailPost','$token','$expires')";
+                        if(!mysqli_query($con,$query)){
+                            $msg = "Could not provide code";
                         }
-                        else{
-                            $query = "INSERT INTO pwdReset (pwdResetEmail,pwdResetToken,pwdResetExpires) VALUES ('$email','$token','$expires')";
-                            if(!mysqli_query($con,$query)){
-                                $msg = "Could not provide code";
-                            }
-                            $_SESSION['email'] = $email;
-                            $succMsg = "Email Sent, If not write your email again and send";
-                        }
-                       
+                        $succMsg = "Email Sent, If not write your email again and press submit email";
+                        $Open = true;
                     }
                 }
                 else{
                     $msg = "Invalid Email";
                 }
                 
-            }    
-        }
-        else if (isset($_POST['codeButt'])){
-            $code = $_POST['code'];
-
-            if(empty($code)){
-                $cdErrMsg = "Code Not Given";
-                exit();
+            
+            
             }
-            else{
-
-                $actCode = hex2bin($code);
-                $query = "select * from pwdreset where pwdResetEmail = '".$_SESSION['email']."'and pwdResetSelector = '$actCode' ";
-                $result =mysqli_query($con,$query); 
-                if(!$result){
-                    $cdErrMsg = "Could Not Check Code";
-                }
-                else if (mysqli_num_rows($result) != 1){
-                    $cdErrMsg = "Maybe code you gave is wrong";
+            else if(!empty($code)){
+                if(strlen($code) < 8){
+                    $cdErrMsg = "Code Length Not Proper";
                 }
                 else{
-                    header ("Location:reset-password.php");
-                    die;
+                    $query = "select * from pwdreset where pwdResetToken = '$code' ";
+                    $result =mysqli_query($con,$query); 
+                    if(!$result){
+                        $cdErrMsg = "Could Not Check Code";
+                    }
+                    else if (mysqli_num_rows($result) <= 0){
+                        $cdErrMsg = "Maybe code you gave is wrong";
+                    }
+                    else{
+                        $row = mysqli_fetch_assoc($result);
+                        $_SESSION['email'] = $row['pwdResetEmail'];
+                        header ("Location:reset-password.php");
+                        die;
+                    }
                 }
-            }
-
-            
+                
+            }        
         }
-        
 }
 
 ?>
@@ -104,8 +98,9 @@ include ("connection.php");
             <h2 class="" style="text-align:center">Forgot Password</h2>
             <br>
             <form action="" class="fp-form" id="myform" method="POST" enctype="multipart/form-data ">
-                <label for="email">Enter Email
-                    <input type="email" id="email" name="email" autocomplete="off">
+                <div style="display: grid">
+                    <label class="forPassLabl" for="email">Enter Email</label>
+                    <input class="forPassInp" type="email" id="email" name="email" autocomplete="off">
                     <div id="emailError" class="error"></div>
                     <?php 
                         if (!empty($msg)) 
@@ -118,25 +113,23 @@ include ("connection.php");
                     <button name="fgPass" id="fpassbutton" type="submit" form="myform">
                         Submit Email
                     </button>
-                    <br>
-                    <br>
+                </div>
+
+                <br>
+                <br>
+                <div style="display: grid">
+                    <label class="forPassLabl" for="code">Enter Code</label>
+                    <input class="forPassInp" type="text" id="code" name="code" autocomplete="off">
                     <?php 
-                        if($codeSend)
-                        {
-                    ?>
-                    <input type="text" id="code" name="code" autocomplete="off">
-                    <?php 
-                        if (!empty($cdErrMsg)) 
-                            echo /*html */'<div class = "error" style = "font-size:16px;color:rgb(255,0,0)">'.$cdErrMsg.'</div>' ;
-                        
-                    ?>
+                            if (!empty($cdErrMsg)) 
+                                echo /*html */'<div class = "error" style = "font-size:16px;color:rgb(255,0,0)">'.$cdErrMsg.'</div>' ;
+                            
+                        ?>
                     <button name="codeButt" id="codeButt" type="submit" form="myform">
                         Submit Code
                     </button>
-                    <?php 
-                        }
-                    ?>
-                </label>
+                </div>
+
 
             </form>
 
