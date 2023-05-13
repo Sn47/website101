@@ -1,4 +1,5 @@
 {
   "html.format.indentInnerHtml": true,
-  "html.format.indentHandlebars": true
+  "html.format.indentHandlebars": true,
+  "liveServer.settings.port": 5501
 }

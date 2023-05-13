@@ -16,6 +16,8 @@
 }
 
 * {
+
+  
   font-family: myfont, Dosis;
   margin: 0;
   padding: 0;
@@ -62,7 +64,7 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 0%;
-  padding: 0.5rem 2%;
+  padding: 0rem 2%;
   left: 0;
   top: 0;
   right: 0;
@@ -98,6 +100,10 @@ header {
   align-items: center;
   transform: scaleY(0);
   transform-origin: top;
+}
+
+.search-form.active{
+  transform: scaleY(1);
 }
 
 .search-form input {
@@ -138,7 +144,7 @@ header {
 
 .cart-item-container{
    position: absolute;
-   top: 14%; right: 1%;
+   top: 14%; right: -100%;
   height: calc(100vh - 9.5rem);
   width:  35rem;
   background: #000000;
@@ -148,6 +154,10 @@ header {
   border: 3px solid #e07b07;
   border-radius: 15px;
   box-sizing: border-box;
+
+}
+.cart-item-container.active{
+  right: 1%;
 }
 .cart-item-container h1{
   margin-top: 5px;
@@ -159,7 +169,7 @@ header {
   margin: 2rem 0;
   display: flex;
   align-items: center;
-
+  z-index: 1000;
   gap: 1.5rem;
 
 }
@@ -252,7 +262,6 @@ header {
 .navbar {
   margin: 0 1rem;
   font-size: 1.6rem;
-  display: flex;
   font-size: medium;
   font-family: myfont, Dosis;
   color: rgb(255, 255, 255);
@@ -743,3 +752,43 @@ li p {
   margin-left: 10px;
   height: 80px;
 }
+
+
+@media (max-width: 991px){
+  html{
+    font-size: 55%;
+  }
+  .header{
+    padding: 1.5rem 2rem;
+  }
+
+  #menu-btn{
+    display: inline-block;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 14%; right: 1%;
+   height: calc(100vh - 9.5rem);
+   width:  35rem;
+   background: #ffffff;
+   padding: 0 1.5rem;
+   z-index: 1000;
+   color: #fff;
+   border: 3px solid #e07b07;
+   border-radius: 15px;
+   box-sizing: border-box;
+    
+  }
+
+  .header .navbar a{
+    display: block;
+    margin: 1.5rem ;
+    padding: .5rem;
+    font-size: 2rem;
+
+  }
+  
+}
+
+

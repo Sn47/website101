@@ -20,6 +20,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
+        
         <link rel="stylesheet" href="temp.css?v=<?php echo time(); ?>">
         <link rel=”stylesheet”
             href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow”
@@ -27,13 +28,10 @@ session_start();
         <link rel=”stylesheet”
             href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css”rel=”nofollow”
             integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anonymous”>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+       
+        
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-        <script defer src="app.js">
-
-
-        </script>
+       
         <title>Mainpage</title>
     </head>
 
@@ -44,10 +42,13 @@ session_start();
 
             <nav class="navbar">
 
-                <button class="raise"><a href="#home" style="padding : 25px">HOME</a></button>
-                <button class="raise"><a href="#explore" style="padding : 25px">EXPLORE</a></button>
-                <button class="raise"><a href="#about" style="padding : 25px">ABOUT</a> </button>
+                
+              
+                
                 <button class="raise"><a href="#review" style="padding : 25px">REVIEW</a> </button>
+                <button class="raise"><a href="#about" style="padding : 25px">ABOUT</a> </button>
+                <button class="raise"><a href="#explore" style="padding : 25px">EXPLORE</a></button>
+                <button class="raise"><a href="#home" style="padding : 25px">HOME</a></button>
 
             </nav>
 
@@ -83,11 +84,11 @@ session_start();
                 <input type="search" id="search-box" placeholder="search here...">
                 <label for="search-box" class="fas fa-search"></label>
 
+
                 </div>
-            <div class="cart-item-container">
-                <h1>CART</h1>
-            </div>
+            
            <div class="cart-item-container">
+                <h1>CART</h1>
                 <div class="cart-item">
                     <span class="fas fa-times"></span>
                     <img src="gulab.jpg" alt="gulabjamun">
@@ -225,7 +226,7 @@ session_start();
             <div class="spacer11 layer11"></div>
             <section>
                 <div class="third">
-
+                <script src="script.js" ></script>
                     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
                     <script>
                     AOS.init({
