@@ -1,3 +1,6 @@
+<?php
+    include ("connection.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,15 +20,31 @@
         ?>
         <section>
             <div class="products">
+                <?php
+                    if($_GET['category'] == 'all'){
+                        $query = "select * from products";
+                        
+                    }
+                    $result = mysqli_query($con,$query);
+                    if(!$result){
+                        echo 'Could Not Fetch all products';
+                    }
+                    else{
+                        
+                        while($row = mysqli_fetch_assoc($result)){
+                            
+                        
+
+                ?>
                 <div class="wrapper">
-                    <img src="gulab.jpg" alt="gulab jamun">
+                    <img src="data:image/jpeg;base64,<?php echo base64_encode($row['img1']) ?>" alt="gulab jamun">
                     <div class="container">
                         <div class="top"></div>
                         <div class="bottom">
                             <div class="left">
                                 <div class="details">
-                                    <h1>Gulabjamun</h1>
-                                    <p>Rs10/-</p>
+                                    <h1><?php echo $row['Name'] ?></h1>
+                                    <p>Rs<?php echo $row['Price'] ?>/-</p>
                                 </div>
                                 <div class="buy"><i class="fas fa-shopping-cart" id="cart-btn"></i></div>
                             </div>
@@ -36,84 +55,20 @@
                         <div class="contents">
                             <h1>Info card</h1>
                             <h2>Nutrition facts</h2>
-                            <p>13% Total Fat 8.5g <br>
-                                3% Cholesterol 7.8mg <br>
-                                4% Sodium 58.5mg <br>
-                                15% Total Carbohydrate 19.9g <br></p>
+                            <p><?php echo $row['Ingredients'] ?></p>
                             <h2>History</h2>
-                            <p>Gulab jamun was first prepared in medieval India and was derived from a fritter that
-                                Central Asian Turkic invaders brought to India. Another theory claims that it was
-                                accidentally prepared by the Mughal emperor Shah Jahan's personal chef.</p>
+                            <p><?php echo $row['History'] ?></p>
+                            <h2>Details</h2>
+                            <p><?php echo $row['Detail'] ?></p>
 
                         </div>
                     </div>
                 </div>
 
-                <div class="wrapper">
-                    <img src="jalebi.jpeg" alt="jalebi">
-                    <div class="container">
-                        <div class="top"> </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1>Jalebi</h1>
-                                    <p>Rs5/-</p>
-                                </div>
-                                <div class="buy"><i class="fas fa-shopping-cart" id="cart-btn"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="inside">
-                        <div class="icon"><i class="fa-solid fa-circle-info"></i></div>
-                        <div class="contents">
-                            <h1>Info card</h1>
-                            <h2>Nutrition facts</h2>
-                            <p>13% Total Fat 8.5g <br>
-                                3% Cholesterol 7.8mg <br>
-                                4% Sodium 58.5mg <br>
-                                15% Total Carbohydrate 19.9g <br></p>
-                            <h2>History</h2>
-                            <p>The earliest known history of this food in Western Asia comes from the 10th century in
-                                the Arabic cookbook Kitab al-Tabikh (English: The Book of Dishes) by Ibn Sayyar
-                                al-Warraq.</p>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="wrapper">
-                    <img src="lado.jpg" alt="lado">
-                    <div class="container">
-                        <div class="top"> </div>
-                        <div class="bottom">
-                            <div class="left">
-                                <div class="details">
-                                    <h1>Lado</h1>
-                                    <p>Rs25/-</p>
-                                </div>
-                                <div class="buy"><i class="fas fa-shopping-cart" id="cart-btn"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="inside">
-                        <div class="icon"><i class="fa-solid fa-circle-info"></i></div>
-                        <div class="contents">
-                            <h1>Info card</h1>
-                            <h2>Nutrition facts</h2>
-                            <p>13% Total Fat 8.5g <br>
-                                3% Cholesterol 7.8mg <br>
-                                4% Sodium 58.5mg <br>
-                                15% Total Carbohydrate 19.9g <br></p>
-                            <h2>History</h2>
-                            <p>Lado, as part of the Bahr-el-Ghazal, came under the control of the Khedivate of Egypt and
-                                in 1869 Sir Samuel Baker created an administration in the area, based in Gondokoro,
-                                suppressed the slave trade and opened up the area to commerce.</p>
-
-                        </div>
-                    </div>
-                </div>
-
+                <?php
+                    }
+                }
+                ?>
             </div>
             <button class="orderbutton">Show more</button>
         </section>

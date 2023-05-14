@@ -2,7 +2,10 @@
 session_start();
 $login = false;
 if(isset($_SESSION['user_id'])){
-        $login = true;
+        if($_SESSION['user_id'] != 0 ) $login = true;
+    }
+    else{
+        $_SESSION['user_id'] = 0;
     }
 ?>
 
@@ -17,7 +20,7 @@ if(isset($_SESSION['user_id'])){
 
         <button class="raise"><a href="#review" style="padding : 25px">REVIEW</a> </button>
         <button class="raise"><a href="#about" style="padding : 25px">ABOUT</a> </button>
-        <button class="raise"><a href="explore.php" style="padding : 25px">EXPLORE</a></button>
+        <button class="raise"><a href="explore.php?category=all" style="padding : 25px">EXPLORE</a></button>
         <button class="raise"><a href="mainpage.php" style="padding : 25px">HOME</a></button>
 
     </nav>
@@ -25,9 +28,6 @@ if(isset($_SESSION['user_id'])){
     <div class="icons">
         <div class="fas fa-search" id="search-btn"></div>
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
-
-
-
 
         <?php
                 if($login === false)
