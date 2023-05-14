@@ -1,17 +1,11 @@
 <?php
-session_start();
 
-    $login = false;
+    
     include("connection.php");
     include("functions.php");
 
-    if(isset($_SESSION['user_id'])){
-        $login = true;
-    }
+    
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +15,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
-        
+
         <link rel="stylesheet" href="temp.css?v=<?php echo time(); ?>">
         <link rel=”stylesheet”
             href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow”
@@ -29,102 +23,17 @@ session_start();
         <link rel=”stylesheet”
             href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css”rel=”nofollow”
             integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anonymous”>
-       
-        
+
+
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-       
+
         <title>Mainpage</title>
     </head>
 
     <body>
-        <header>
-            <a href="mainpage.php" style="padding : 25px"> <img class="logo" src="orangeone.png"
-                    alt="the odin project logo"></a>
-
-            <nav class="navbar">
-
-                
-              
-                
-                <button class="raise"><a href="#review" style="padding : 25px">REVIEW</a> </button>
-                <button class="raise"><a href="#about" style="padding : 25px">ABOUT</a> </button>
-                <button class="raise"><a href="#explore" style="padding : 25px">EXPLORE</a></button>
-                <button class="raise"><a href="#home" style="padding : 25px">HOME</a></button>
-
-            </nav>
-
-            <div class="icons">
-                <div class="fas fa-search" id="search-btn"></div>
-                <div class="fas fa-shopping-cart" id="cart-btn"></div>
-
-
-
-
-                <?php
-                if($login === false)
-                {
-                    echo '<a class = "" href = "signupform.php"><div class="fas fa-user" id="user-btn"></div></a>';
-                }
-                else{
-
-                    $result = mysqli_query($con,"select image from users where UserId = ".$_SESSION['user_id']);
-                    if($result){
-                        $image = mysqli_fetch_assoc($result);
-                        echo '<a  class = "avaSty" href = "profile.php" ><img class = "profile_size profile_pic" src="data:image/jpg;base64,'.base64_encode($image['image']).'">  </a>';
-                    }
-                    else{
-                        echo 'Error';
-                    
-                    }
-                    
-                }
-            ?>
-                <div class="fas fa-bars" id="menu-btn"></div>
-            </div>
-            <div class="search-form">
-                <input type="search" id="search-box" placeholder="search here...">
-                <label for="search-box" class="fas fa-search"></label>
-
-<<<<<<< HEAD
-
-                </div>
-            
-           <div class="cart-item-container">
-                <h1>CART</h1>
-=======
-            </div>
-            <div class="cart-item-container">
-                <h1>CART</h1>
-            </div>
-            <div class="cart-item-container">
->>>>>>> 1ea60fd98d2a148d1be724a8c74a3ab7069c5d3f
-                <div class="cart-item">
-                    <span class="fas fa-times"></span>
-                    <img src="gulab.jpg" alt="gulabjamun">
-                    <div class="content">
-                        <h3>Gulab jamun</h3>
-                        <div class="price">Rs10/-</div>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <span class="fas fa-times"></span>
-                    <img src="jalebi.jpeg" alt="gulabjamun">
-                    <div class="content">
-                        <h3>Jalebi</h3>
-                        <div class="price">Rs15/-</div>
-                    </div>
-                </div>
-                <div class="cart-item">
-                    <span class="fas fa-times"></span>
-                    <img src="lado.jpg" alt="gulabjamun">
-                    <div class="content">
-                        <h3>Lado</h3>
-                        <div class="price">Rs5/-</div>
-                    </div>
-                </div>
-                <button class="check">CHECK OUT!</button>
-            </div>
-        </header>
+        <?php
+            require_once 'header.php';
+        ?>
 
         <section>
             <section>
@@ -235,7 +144,7 @@ session_start();
             <div class="spacer11 layer11"></div>
             <section>
                 <div class="third">
-                <script src="script.js" ></script>
+                    <script src="script.js"></script>
                     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
                     <script>
                     AOS.init({
@@ -265,38 +174,9 @@ session_start();
             </section>
         </section>
 
-        <footer class="footer">
-            <div class="footer__addr" data-aos="fade">
-                <img class="logo1" src="orangeone.png" alt="the odin project logo"><img>
-
-                <h2>Contact</h2>
-
-                <address>
-                    Dunder Mifflin , 1725 Slough Avenue , Suite 200<br>
-
-                    <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
-                </address>
-            </div>
-
-            <ul>
-                <li><a href="https://twitter.com/romeofrom1888" target="blank">Twitter</a></li>
-                <li><a href="https://www.instagram.com/another_ahsan/" target="blank">Instagram</a></li>
-                <li><a href="mailto:ahsan47sn@gmail.com" target="blank">Email</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100004731819279" target="blank">Facebook</a></li>
-                <li><a href="https://github.com/Sn47" target="blank">Github</a></li>
-                <li>
-                    <p>👋</p>
-                </li>
-            </ul>
-
-            <div class="legal" data-aos="fade">
-                <p>&copy; 2023 Something But AAA. All rights reserved.</p>
-
-                <div class="legal__links">
-                    <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
-                </div>
-            </div>
-        </footer>
+        <?php
+    require_once 'footer.php';
+?>
     </body>
 
 </html>
