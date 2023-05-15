@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="explore.css?v=<?php echo time(); ?>">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
-
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <title>Document</title>
     </head>
 
