@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="explore.css?v=<?php echo time(); ?>">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
 
-        <title>Document</title>
+        <title>Explore</title>
     </head>
 
     <body>
@@ -47,7 +47,8 @@
                                     <h1><?php echo $row['Name'] ?></h1>
                                     <p>Rs<?php echo $row['Price'] ?>/-</p>
                                 </div>
-                                <div class="buy"><i class="fas fa-shopping-cart" id="cart-btn"></i></div>
+                                <div class="buy"><button><i class="fas fa-shopping-cart" id="cart-btn"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -78,9 +79,24 @@
             <button class="orderbutton">Show more</button>
         </section>
         <?php
-          require_once 'footer.php';
+        
+        require_once 'footer.php';
+        echo '<script >
+        function clickFunction() {
+        </script>';
+            
+        if($_SESSION['user_id'] == 0){
+
+        echo '<script>
+        alert("Login First");
+        </script>';
+
+        }
+
+        echo '<script>
+        };
+        </script>';
         ?>
-        <script src="script.js"></script>
     </body>
 
 </html>
