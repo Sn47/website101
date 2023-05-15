@@ -11,8 +11,13 @@
         <link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="explore.css?v=<?php echo time(); ?>">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
+<<<<<<< HEAD
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <title>Document</title>
+=======
+
+        <title>Explore</title>
+>>>>>>> 7a9a1dda763f1af8e93472896941dcd1709327e8
     </head>
 
     <body>
@@ -47,7 +52,8 @@
                                     <h1><?php echo $row['Name'] ?></h1>
                                     <p>Rs<?php echo $row['Price'] ?>/-</p>
                                 </div>
-                                <div class="buy"><i class="fas fa-shopping-cart" id="cart-btn"></i></div>
+                                <div class="buy"><button><i class="fas fa-shopping-cart" id="cart-btn"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -78,9 +84,24 @@
             <button class="orderbutton">Show more</button>
         </section>
         <?php
-          require_once 'footer.php';
+        
+        require_once 'footer.php';
+        echo '<script >
+        function clickFunction() {
+        </script>';
+            
+        if($_SESSION['user_id'] == 0){
+
+        echo '<script>
+        alert("Login First");
+        </script>';
+
+        }
+
+        echo '<script>
+        };
+        </script>';
         ?>
-        <script src="script.js"></script>
     </body>
 
 </html>

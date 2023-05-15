@@ -593,3 +593,6 @@ body {
 .proSec {
   display: grid;
 }
+.buy {
+  cursor: pointer;
+}
