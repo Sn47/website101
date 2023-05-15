@@ -19,24 +19,24 @@
           require_once 'header.php';
         ?>
         <section>
-            <div class="products">
+            <div class="proSec">
                 <?php
-                    if($_GET['category'] == 'all'){
-                        $query = "select * from products";
-                        
-                    }
-                    $result = mysqli_query($con,$query);
-                    if(!$result){
-                        echo 'Could Not Fetch all products';
-                    }
-                    else{
-                        
-                        while($row = mysqli_fetch_assoc($result)){
-                            
-                        
 
-                ?>
-                <div class="wrapper">
+                if($_GET['category'] == 'all'){
+                    $query = "select * from products";
+                    
+                }
+                $result = mysqli_query($con,$query);
+                if(!$result){
+                    echo 'Could Not Fetch all products';
+                }
+                else{
+                    $counter = 0;
+                    while($row = mysqli_fetch_assoc($result)){
+                
+                    if($counter % 3 == 0) echo /*html */'<div class="products">';
+            ?>
+                <div class=" wrapper">
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($row['img1']) ?>" alt="gulab jamun">
                     <div class="container">
                         <div class="top"></div>
@@ -65,10 +65,14 @@
                     </div>
                 </div>
 
+
                 <?php
-                    }
+                $counter++;
+                if($counter % 3 == 0) echo /*html */'</div>';
+                
                 }
-                ?>
+            }
+            ?>
             </div>
             <button class="orderbutton">Show more</button>
         </section>
