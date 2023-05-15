@@ -19,7 +19,7 @@ if(isset($_SESSION['user_id'])){
 
 
         <button class="raise"><a href="#review" style="padding : 25px">REVIEW</a> </button>
-        <button class="raise"><a href="#about" style="padding : 25px">ABOUT</a> </button>
+        <button class="raise"><a href="about.php" style="padding : 25px">ABOUT</a> </button>
         <button class="raise"><a href="explore.php?category=all" style="padding : 25px">EXPLORE</a></button>
         <button class="raise"><a href="mainpage.php" style="padding : 25px">HOME</a></button>
 

@@ -18,7 +18,6 @@ include ("connection.php");
                 die;
             }
         }
-
     }
 ?>
 

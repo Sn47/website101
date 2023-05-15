@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="temp.css?v=<?php echo time(); ?>">
         <link rel=”stylesheet”
             href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow”

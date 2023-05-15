@@ -1,0 +1,91 @@
+@import url("https://fonts.google.com/betterspecimen/Dosis/tester");
+@font-face {
+  font-family: myfont;
+  src: url("dosis-variablefont_wght-webfont.woff2") format("woff2"),
+    url("dosis-variablefont_wght-webfont.woff") format("woff"),
+    url("dosis-variablefont_wght-webfont.ttf"),
+    url("dosis-variablefont_wght-webfont.svg#dosis-variablefont_wght")
+      format("svg"),
+    url("dosis-variablefont_wght-webfont.eot"),
+    url("dosis-variablefont_wght-webfont.eot?#iefix")
+      format("embedded-opentype");
+}
+
+body {
+  font-family: myfont, Dosis;
+  margin: 0;
+  color: white;
+  background-color: black;
+}
+* {
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  margin-left: 2px;
+  width: 33%;
+  margin-bottom: 16px;
+  background-color: grey;
+  border-radius: 30px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: white;
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #e07b07;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
