@@ -42,7 +42,7 @@
                     <div class="sidewrite" data-aos="fade">
                         <h1>Soghat </h1>
                         <p class="discrip">Unique Traditional and Regional Food and Desserts , so called Soghat </p>
-                        <button class="orderbutton">ORDER NOW</button>
+                        <button class="orderbutton"><a href="explore.php?category=all" >ORDER NOW</a></button>
                     </div>
 
 
@@ -64,7 +64,7 @@
                 </div>
                 <div class="row">
                     <div class="column">
-                        <div class="tilt-box-wrap">
+                        <div class="tilt-box-wrap" >
                             <span class="t_over"></span>
                             <span class="t_over"></span>
                             <span class="t_over"></span>
