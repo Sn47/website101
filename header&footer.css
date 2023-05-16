@@ -57,12 +57,12 @@ html::-webkit-scrollbar-thumb {
   border-radius: 50%;
 }
 header {
-    margin: 20px;
+    /* margin: 20px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0%;
-    padding: 0rem 2%;
+    padding: 0rem 1%;
     left: 0;
     top: 0;
     right: 0;
@@ -253,21 +253,27 @@ header {
     transform: translateY(0);
   }
   .navbar {
-    margin: 0 1rem;
+    margin: 0 0rem;
     font-size: 1.6rem;
     font-size: medium;
     font-family: myfont, Dosis;
     color: rgb(255, 255, 255);
     font-weight: lighter;
+      
   }
   button {
     text-align: center;
     justify-content: center;
-  }
+    padding-left: 2px;
+    padding-right: 2px;
+    }
   a {
     text-decoration: none;
     font-family: myfont, Dosis;
     color: #e07b07;
+    padding-left: 2px;
+    padding-right: 2px;
+
   }
   a:hover {
     color: white;
@@ -280,13 +286,13 @@ header {
     float: right;
     line-height: 40px;
     transition: all 0.3s;
-    border-radius: 20%;
+    border-radius: 15%;
   }
   .raise:hover {
     transform: translatey(-0.2rem);
     border: 2px solid #000000;
     color: #e07b07;
-    box-shadow: 0 4px 4px -2px #e07b07;
+    box-shadow:0  4px 4px -2px #e07b07;
   }
   
 .footer {

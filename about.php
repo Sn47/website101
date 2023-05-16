@@ -24,48 +24,47 @@
             <h1>About Us Page</h1>
             <p>Some text about who we are and what we do.</p>
             <p>Resize the browser window to see that this page is responsive by the way.</p>
-        </div>
+       
 
         <h2 style="text-align:center">Our Team</h2>
-        <div class="row">
-            <div class="column">
-                <div class="card">
-                    <img src="http://localhost/website101/images/ahmad.jpg" alt="Ahmad" style="width:100%">
-                    <div class="container">
-                        <h2>M.Ahmad Ali</h2>
-                        <p class="title">BackEnd Designer</p>
-                        <p>Minecraft.</p>
-                        <p>ahmadshykh2015@gmail.com</p>
-                        <p>Contact: 0321-4669811</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="card">
-                    <img src="http://localhost/website101/images/ahmed.jpg" alt="Ahmed" style="width:100%">
-                    <div class="container">
-                        <h2>Ahmed Abdullah</h2>
-                        <p class="title">Founder Of Soghat</p>
-                        <p>No Please No</p>
-                        <p>ahmed40152@gmail.com</p>
-                        <p>Contact: 0316-4995399</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="column">
-                <div class="card">
-                    <img src="http://localhost/website101/images/ahsan.png" alt="Ahsan" style="width:100%">
-                    <div class="container">
-                        <h2>Ahsan Naveed</h2>
-                        <p class="title">Frontend Designer</p>
-                        <p>there are ways to be beautiful that don’t involve your appearance ‹𝟯.</p>
-                        <p>john@example.com</p>
-                        <p>Contact: 0333-4030884</p>
-                    </div>
-                </div>
-            </div>
+        <div class="container">
+  <div class="card card0">
+    <div class="border">
+      <h2>Al Pacino</h2>
+      <div class="icons">
+        <i class="fa fa-codepen" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-dribbble" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <div class="card card1">
+    <div class="border">
+      <h2>Ben Stiller</h2>
+      <div class="icons">
+        <i class="fa fa-codepen" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-dribbble" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <div class="card card2">
+    <div class="border">
+      <h2>Patrick Stewart</h2>
+      <div class="icons">
+        <i class="fa fa-codepen" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-dribbble" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
         <?php
         require_once 'footer.php'
