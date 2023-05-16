@@ -69,15 +69,13 @@ alert("No Quantity Added");
                                         </div>
 
                                     </div>
-<<<<<<< HEAD
-                                    <input type="hidden" id="proId" name="proId" value="<?php $row['Pro_Id'] ?>">
-                                    <div><button  class="buy" type="submit" name="submit"><i class="fas fa-shopping-cart"
-                                                id="cart-btn"></i></button>
-=======
+
+                                   
+
                                     <input type="hidden" id="proId" name="proId" value="<?php echo $row['Pro_Id'] ?>">
                                     <div class="buy"><button form="myform" type="submit" name="submit"><i
                                                 class="fas fa-shopping-cart" id="cart-btn"></i></button>
->>>>>>> 9f3ead2e485a23eb09b390f7e0435bc0e136493c
+
                                     </div>
                                 </form>
 
