@@ -344,9 +344,12 @@ body {
   box-shadow: none;
   transform: translateY(0);
 }
+
+
 .products {
   margin-top: 25px;
 }
+
 .proSec {
   display: grid;
 }
