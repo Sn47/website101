@@ -45,12 +45,22 @@
                         <div class="top"></div>
                         <div class="bottom">
                             <div class="left">
-                                <div class="details">
-                                    <h1><?php echo $row['Name'] ?></h1>
-                                    <p>Rs<?php echo $row['Price'] ?>/-</p>
-                                </div>
-                                <div class="buy"><button><i class="fas fa-shopping-cart" id="cart-btn"></i></button>
-                                </div>
+                                <form action="POST">
+                                    <div class="details">
+                                        <h1><?php echo $row['Name'] ?></h1>
+                                        <p>Rs<?php echo $row['Price'] ?>/-</p>
+                                        <div class="quanDiv">
+                                            <label for="quantity">Quantity</label>
+                                            <input type="number" name="quantity"> </input>
+                                        </div>
+
+                                    </div>
+                                    <input type="hidden" id="proId" name="proId" value="<?php $row['Pro_Id'] ?>">
+                                    <div class="buy"><button type="submit" name="submit"><i class="fas fa-shopping-cart"
+                                                id="cart-btn"></i></button>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
