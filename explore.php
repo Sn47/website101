@@ -11,13 +11,10 @@
         <link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="explore.css?v=<?php echo time(); ?>">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
-<<<<<<< HEAD
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
-        <title>Document</title>
-=======
 
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <title>Explore</title>
->>>>>>> 7a9a1dda763f1af8e93472896941dcd1709327e8
     </head>
 
     <body>
@@ -48,12 +45,22 @@
                         <div class="top"></div>
                         <div class="bottom">
                             <div class="left">
-                                <div class="details">
-                                    <h1><?php echo $row['Name'] ?></h1>
-                                    <p>Rs<?php echo $row['Price'] ?>/-</p>
-                                </div>
-                                <div class="buy"><button><i class="fas fa-shopping-cart" id="cart-btn"></i></button>
-                                </div>
+                                <form action="POST">
+                                    <div class="details">
+                                        <h1><?php echo $row['Name'] ?></h1>
+                                        <p>Rs<?php echo $row['Price'] ?>/-</p>
+                                        <div class="quanDiv">
+                                            <label for="quantity">Quantity</label>
+                                            <input type="number" name="quantity"> </input>
+                                        </div>
+
+                                    </div>
+                                    <input type="hidden" id="proId" name="proId" value="<?php $row['Pro_Id'] ?>">
+                                    <div class="buy"><button type="submit" name="submit"><i class="fas fa-shopping-cart"
+                                                id="cart-btn"></i></button>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
