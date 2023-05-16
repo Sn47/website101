@@ -1,3 +1,7 @@
+<?php
+session_start();
+include ("connection.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +9,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="about.css?v=<?php echo time(); ?>">
-        <!-- <link rel="stylesheet" href="temp.css?v=<?php echo time(); ?>"> -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
         <title>About Us</title>
@@ -24,52 +26,82 @@
             <h1>About Us Page</h1>
             <p>Some text about who we are and what we do.</p>
             <p>Resize the browser window to see that this page is responsive by the way.</p>
-       
 
-        <h2 style="text-align:center">Our Team</h2>
-        <div class="container">
-  <div class="card card0">
-    <div class="border">
-      <h2>Al Pacino</h2>
-      <div class="iconz">
-        <i class="fa fa-codepen" aria-hidden="true"></i>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-        <i class="fa fa-dribbble" aria-hidden="true"></i>
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-      </div>
-    </div>
-  </div>
-  <div class="card card1">
-    <div class="border">
-      <h2>Ben Stiller</h2>
-      <div class="iconz">
-        <i class="fa fa-codepen" aria-hidden="true"></i>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-        <i class="fa fa-dribbble" aria-hidden="true"></i>
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-      </div>
-    </div>
-  </div>
-  <div class="card card2">
-    <div class="border">
-      <h2>Patrick Stewart</h2>
-      <div class="iconz">
-        <i class="fa fa-codepen" aria-hidden="true"></i>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-        <i class="fa fa-dribbble" aria-hidden="true"></i>
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-      </div>
-    </div>
-  </div>
-</div>
-        <h1>Made with love ♥</h1>
+
+            <h2 style="text-align:center">Our Team</h2>
+            <div class="container">
+                <div class="card card0">
+                    <div class="border">
+                        <h2>Al Pacino</h2>
+                        <div class="iconz">
+                            <i class="fa fa-codepen" aria-hidden="true"></i>
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                            <i class="fa fa-dribbble" aria-hidden="true"></i>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card1">
+                    <div class="border">
+                        <h2>Ben Stiller</h2>
+                        <div class="iconz">
+                            <i class="fa fa-codepen" aria-hidden="true"></i>
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                            <i class="fa fa-dribbble" aria-hidden="true"></i>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card2">
+                    <div class="border">
+                        <h2>Patrick Stewart</h2>
+                        <div class="iconz">
+                            <i class="fa fa-codepen" aria-hidden="true"></i>
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                            <i class="fa fa-dribbble" aria-hidden="true"></i>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1>Made with love ♥</h1>
         </div>
         <?php
         require_once 'footer.php'
     ?>
+        <section>
+            <div class="third">
+                <script src="script.js"></script>
+                <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                <script>
+                AOS.init({
+                    // Global settings:
+                    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+                    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+                    initClassName: 'aos-init', // class applied after initialization
+                    animatedClassName: 'aos-animate', // class applied on animation
+                    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+                    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+                    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+                    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+
+                    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+                    offset: 120, // offset (in px) from the original trigger point
+                    delay: 0, // values from 0 to 3000, with step 50ms
+                    duration: 400, // values from 0 to 3000, with step 50ms
+                    easing: 'ease-in-out-quart', // default easing for AOS animations
+                    once: false, // whether animation should happen only once - while scrolling down
+                    mirror: true, // whether elements should animate out while scrolling past them
+                    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+                });
+                </script>
+            </div>
+        </section>
     </body>
 
 </html>

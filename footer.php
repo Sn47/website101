@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
 <footer class="footer">
     <div class="footer__addr" data-aos="fade">
         <img class="logo1" src="orangeone.png" alt="the odin project logo"><img>

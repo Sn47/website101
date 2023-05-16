@@ -82,7 +82,7 @@ session_start();
                     <a href="forgotPassword.php">Forgot Password?</a>
                 </div>
                 <div class="signupbutton">
-                    <button zid="signupbutton" type="submit" form="myform"><a href="mainage.html">Log in</a></button>
+                    <button zid="signupbutton" type="submit" form="myform"><a href="mainpage.php">Log in</a></button>
                     <p>Don't have an account? Sign up now <a href="signupform.php">Sign up</a> </p>
                 </div>
             </div>
