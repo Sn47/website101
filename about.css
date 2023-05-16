@@ -63,6 +63,16 @@ html {
   display: table;
 }
 
+h1{
+  padding: 50px;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+  display: inline;
+}
+
+
+
 .title {
   color: grey;
 }
@@ -131,12 +141,12 @@ html {
 }
 
 .card0 {
-  background: url('https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg') center center no-repeat;
+  background: url('ahsan.jpg') center center no-repeat;
   background-size: 300px;
 }
 
 .card0:hover {
-  background: url('https://i.pinimg.com/736x/8f/a0/51/8fa051251f5ac2d0b756027089fbffde--terry-o-neill-al-pacino.jpg') left center no-repeat;
+  background: url('ahsan.jpg') right center no-repeat;
   background-size: 600px;
 }
 
@@ -146,12 +156,12 @@ html {
 }
 
 .card1 {
-  background: url('https://i.pinimg.com/originals/28/d2/e6/28d2e684e7859a0dd17fbd0cea00f8a9.jpg') center center no-repeat;
+  background: url('ahmad.jpg') center center no-repeat;
   background-size: 300px;
 }
 
 .card1:hover {
-  background: url('https://i.pinimg.com/originals/28/d2/e6/28d2e684e7859a0dd17fbd0cea00f8a9.jpg') left center no-repeat;
+  background: url('ahmad.jpg') center center no-repeat;
   background-size: 600px;
 }
 
@@ -188,7 +198,7 @@ h2 {
   transition: opacity 1s;
 }
 
-.icons {
+.iconz {
   position: absolute;
   fill: #fff;
   color: #fff;

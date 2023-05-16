@@ -31,7 +31,7 @@
   <div class="card card0">
     <div class="border">
       <h2>Al Pacino</h2>
-      <div class="icons">
+      <div class="iconz">
         <i class="fa fa-codepen" aria-hidden="true"></i>
         <i class="fa fa-instagram" aria-hidden="true"></i>
         <i class="fa fa-dribbble" aria-hidden="true"></i>
@@ -43,7 +43,7 @@
   <div class="card card1">
     <div class="border">
       <h2>Ben Stiller</h2>
-      <div class="icons">
+      <div class="iconz">
         <i class="fa fa-codepen" aria-hidden="true"></i>
         <i class="fa fa-instagram" aria-hidden="true"></i>
         <i class="fa fa-dribbble" aria-hidden="true"></i>
@@ -55,7 +55,7 @@
   <div class="card card2">
     <div class="border">
       <h2>Patrick Stewart</h2>
-      <div class="icons">
+      <div class="iconz">
         <i class="fa fa-codepen" aria-hidden="true"></i>
         <i class="fa fa-instagram" aria-hidden="true"></i>
         <i class="fa fa-dribbble" aria-hidden="true"></i>
@@ -65,6 +65,7 @@
     </div>
   </div>
 </div>
+        <h1>Made with love ♥</h1>
         </div>
         <?php
         require_once 'footer.php'
