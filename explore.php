@@ -11,13 +11,10 @@
         <link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="explore.css?v=<?php echo time(); ?>">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
-<<<<<<< HEAD
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
-        <title>Document</title>
-=======
 
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <title>Explore</title>
->>>>>>> 7a9a1dda763f1af8e93472896941dcd1709327e8
     </head>
 
     <body>
