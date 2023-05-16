@@ -86,7 +86,6 @@ html,
 body {
   background: #000000;
   font-family: myfont, Dosis;
-  
 }
 .products {
   display: flex;
@@ -345,15 +344,27 @@ body {
   box-shadow: none;
   transform: translateY(0);
 }
+<<<<<<< HEAD
 
+=======
+.products {
+}
+>>>>>>> 7b35bd86f9469aebefaf333b1819ef84133d092a
 .proSec {
   display: grid;
 }
-.buy button{
+.buy button {
   cursor: pointer;
-  
-
 }
-.buy:hover{
+.quanDiv {
+  display: flex;
+}
+.quanDiv input {
+  width: 70px;
+  margin-left: 9px;
+  border: 3px solid black;
+  height: 24px;
+}
+.buy:hover {
   background-color: #000000;
 }
