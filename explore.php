@@ -1,5 +1,19 @@
 <?php
     include ("connection.php");
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if(!isset($_POST['quantity'])){
+            ?>
+alert("No Quantity Added");
+
+<?php
+        
+        }
+    }
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,19 +59,25 @@
                         <div class="top"></div>
                         <div class="bottom">
                             <div class="left">
-                                <form action="POST">
+                                <form action="POST" id="myform" enctype="multipart/form-data ">
                                     <div class="details">
                                         <h1><?php echo $row['Name'] ?></h1>
                                         <p>Rs<?php echo $row['Price'] ?>/-</p>
                                         <div class="quanDiv">
-                                            <label for="quantity">Quantity</label>
+                                            <label for="quantity" required>Quantity</label>
                                             <input type="number" name="quantity"> </input>
                                         </div>
 
                                     </div>
+<<<<<<< HEAD
                                     <input type="hidden" id="proId" name="proId" value="<?php $row['Pro_Id'] ?>">
                                     <div><button  class="buy" type="submit" name="submit"><i class="fas fa-shopping-cart"
                                                 id="cart-btn"></i></button>
+=======
+                                    <input type="hidden" id="proId" name="proId" value="<?php echo $row['Pro_Id'] ?>">
+                                    <div class="buy"><button form="myform" type="submit" name="submit"><i
+                                                class="fas fa-shopping-cart" id="cart-btn"></i></button>
+>>>>>>> 9f3ead2e485a23eb09b390f7e0435bc0e136493c
                                     </div>
                                 </form>
 
@@ -93,21 +113,6 @@
         <?php
         
         require_once 'footer.php';
-        echo '<script >
-        function clickFunction() {
-        </script>';
-            
-        if($_SESSION['user_id'] == 0){
-
-        echo '<script>
-        alert("Login First");
-        </script>';
-
-        }
-
-        echo '<script>
-        };
-        </script>';
         ?>
     </body>
 
