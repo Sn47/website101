@@ -56,7 +56,7 @@
 
                                     </div>
                                     <input type="hidden" id="proId" name="proId" value="<?php $row['Pro_Id'] ?>">
-                                    <div class="buy"><button type="submit" name="submit"><i class="fas fa-shopping-cart"
+                                    <div><button  class="buy" type="submit" name="submit"><i class="fas fa-shopping-cart"
                                                 id="cart-btn"></i></button>
                                     </div>
                                 </form>
