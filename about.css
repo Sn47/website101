@@ -169,12 +169,12 @@ h1 {
 }
 
 .card2 {
-  background: url("images/ahmad.jpg") center center no-repeat;
+  background: url("images/ahmad.jpg") left center no-repeat;
   background-size: 300px;
 }
 
 .card2:hover {
-  background: url("images/ahmad.jpg") center center no-repeat;
+  background: url("images/ahmad.jpg") left center no-repeat;
   background-size: 600px;
 }
 
