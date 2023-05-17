@@ -51,7 +51,8 @@ body {
   padding: 0%;
   justify-content: center;
   height: 99vh;
-  background-color: #000000;
+   background-color: #000000; 
+  
 }
 .mainimage {
   margin-left: 150px;
@@ -84,7 +85,7 @@ body {
 
 html,
 body {
-  background: #000000;
+  background-color: #000000;
   font-family: myfont, Dosis;
 }
 .products {
@@ -159,10 +160,10 @@ body {
   float: left;
   width: calc(70% - 40px);
 }
-.wrapper .container .bottom .left:hover {
+/* .wrapper .container .bottom .left:hover {
   background-color: #000000;
   color: #e07b07;
-}
+} */
 .wrapper .container .bottom .left .buy {
   float: right;
   width: calc(30% - 2px);
@@ -178,7 +179,7 @@ body {
   transition: transform 0.5s;
 }
 .wrapper .container .bottom .left .buy:hover {
-  background: #000000;
+  background: #ffffff;
 }
 
 .wrapper .container .bottom .left .buy:hover i {
@@ -361,7 +362,8 @@ body {
 .quanDiv input {
   width: 70px;
   margin-left: 9px;
-  border: 3px solid black;
+  border: 1px solid black;
+  border-radius: 10%;
   height: 24px;
 }
 .buy:hover {
