@@ -52,6 +52,7 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="profile.css?v=<?php echo time(); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
@@ -59,7 +60,7 @@ session_start();
     <body>
 
         <form method="POST" enctype="multipart/form-data">
-            <div class="signupbutton">
+            <!-- <div class="signupbutton">
                 <button name="submit" type="submit">Log Out</button>
             </div>
             <div class="goBackButton">
@@ -74,18 +75,73 @@ session_start();
             <div class="Upload">
                 <button name="uploadPic" type="submit">Upload Pic</button>
                 <label for="uploadPic">
-                    <?php
-                        if(!empty($msg)){
-                            echo $msg;
-                        }
-                    ?>
+                  //  <?php
+                     //   if(!empty($msg)){
+                    //        echo $msg;
+                    //    }
+                   // ?>
                 </label>
-            </div>
+            </div> -->
 
 
 
-        </form>
+            <div class="card" data-state="#about">
+    <div class="card-header">
+      <div class="card-cover" ></div>
+      <img class="card-avatar" src="https://images.unsplash.com/photo-1549068106-b024baf5062d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="avatar" />
+      <h1 class="card-fullname">William Rocheald</h1>
+      <h2 class="card-jobtitle">UI Developer</h2>
+    </div>
+    <div class="card-main">
+      <div class="card-main">
+        <div class="card-section is-active" id="about">
+          <div class="card-content">
+            <div class="card-subtitle">ABOUT</div>
+            <p class="card-desc">Whatever tattooed stumptown art party sriracha gentrify hashtag intelligentsia readymade schlitz brooklyn disrupt.
+            </p>
+            <div class="card-subtitle">EMAIL</div>
+            <p class="card-desc">AHAHS@GMAIL.COM
+            </p>
+            <div class="card-subtitle">ABOUT</div>
+            <p class="card-desc">Whatever tattooed stumptown art party sriracha gentrify hashtag intelligentsia readymade schlitz brooklyn disrupt.
+            </p>
+          </div>
+        
+        </div>
+      </div>
 
+
+
+      <div class="signupbutton">
+        <button class="orderbutton" name="submit" type="submit">Log Out</button>
+    </div>
+    <!-- <div class="goBackButton">
+        <button name="goBackButton" type="submit">Go To Main Page</button>
+    </div> -->
+  
+  
+    <button  class="orderbutton" name="submit" type="submit"><a href="seller.php">Become seller</a></button>
+    <div class="Upload">
+        <button class="orderbutton" name="uploadPic" type="submit">Upload Pic</button>
+        <label for="uploadPic">
+            <?php
+                if(!empty($msg)){
+                    echo $msg;
+                }
+            ?>
+        </label>
+    </div>
+     
+    <div class="changeAvatar">
+    <label class="l"> Enter Your File
+    <input class="orderbutton" name="changeAvt" type="file">Chose Avatar</input>
+    </label> 
+        
+        
+    </div>      
+
+
+                     </form>
 
     </body>
 

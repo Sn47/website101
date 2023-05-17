@@ -27,7 +27,7 @@ if(isset($_SESSION['user_id'])){
             alt="the odin project logo"></a>
 
     <nav class="navbar">
-        <button class="raise"><a href="#review" style="padding : 25px">REVIEW</a> </button>
+        <button class="raise"><a href="review.php" style="padding : 25px">REVIEW</a> </button>
         <button class="raise"><a href="about.php" style="padding : 25px">ABOUT</a> </button>
         <button class="raise"><a href="explore.php?category=all" style="padding : 25px">EXPLORE</a></button>
         <button class="raise"><a href="mainpage.php" style="padding : 25px">HOME</a></button>
@@ -64,7 +64,7 @@ if(isset($_SESSION['user_id'])){
         <label for="search-box" class="fas fa-search"></label>
 
     </div>
-
+    
     <!-- <div class="cart-item-container">
                 <h1>CART</h1>
             </div>

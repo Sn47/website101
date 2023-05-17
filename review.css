@@ -1,0 +1,377 @@
+@import url("https://fonts.google.com/betterspecimen/Dosis/tester");
+@font-face {
+  font-family: myfont;
+  src: url("dosis-variablefont_wght-webfont.woff2") format("woff2"),
+    url("dosis-variablefont_wght-webfont.woff") format("woff"),
+    url("dosis-variablefont_wght-webfont.ttf"),
+    url("dosis-variablefont_wght-webfont.svg#dosis-variablefont_wght")
+      format("svg"),
+    url("dosis-variablefont_wght-webfont.eot"),
+    url("dosis-variablefont_wght-webfont.eot?#iefix")
+      format("embedded-opentype");
+}
+
+:root {
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+  font-family: myfont, Dosis;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5rem;
+}
+body {
+  margin: 0%;
+  padding: 0%;
+  justify-content: center;
+  height: 99vh;
+  background-color: black;
+}
+
+
+fieldset {
+  box-shadow: 0 8px 10px hsl(120, 60, 40);
+}
+
+
+
+h1,
+h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  top: 24px;
+  color: hsl(0, 0, 100);
+  font-size: 12px;
+}
+
+h2 {
+  top: 44px;
+  color: hsl(0, 0, 100);
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+ul.items {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  top: 0%;
+  left: -60px;
+  transform: translateY(-50%);
+  transform: rotate(90deg);
+  color: #fff;
+}
+
+ul.items li {
+  width: 8px;
+  height: 8px;
+  margin: 10px 0;
+  background: hsl(0, 0, 100);
+  border-radius: 50%;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+ul.items li.active {
+  opacity: 1;
+}
+
+form {
+  position: absolute;
+  width: 400px;
+  height: 120px;
+  top: 50%;
+  left: 53%;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(-50%, -50%);
+}
+
+form fieldset {
+  position: absolute;
+  width: 400px;
+  height: 60px;
+  background: hsl(0, 0%, 0%);
+  border-radius: 20px;
+  opacity: 0;
+  border: 2px solid #e07b07;
+  transform: scale(0.2);
+  transition: all 0.4s ease-in-out;
+}
+form fieldset input{
+    background-color: black;
+}
+
+form fieldset input,
+form fieldset p {
+  display: inline-block;
+  width: 350px;
+  margin-left: 50px;
+  color: hsl(0, 0%, 100%);
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+form fieldset p {
+  margin-top: 22px;
+  text-align: center;
+}
+
+form fieldset input {
+  height: 40px;
+  margin-top: 8px;
+  border: none;
+  outline: none;
+}
+
+form fieldset .icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  
+  top: 22px;
+  transition: all 0.4s ease;
+}
+
+form fieldset .icon.left {
+  left: 10px;
+}
+
+form fieldset .icon.right {
+  right: -15px;
+  cursor: pointer;
+}
+
+form fieldset .icon.button:hover {
+  background: hsl(0, 0%, 0%);
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+
+form fieldset.enable {
+  z-index: 1;
+  opacity: 1;
+  transition: all 0.5s ease-out 0.2s;
+  transform: scale(1);
+  animation: enable 0.5s ease-out 0.2s;
+}
+
+form fieldset.disable {
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  transform: translateY(120px) scale(0.9);
+}
+
+@keyframes enable {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes error {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+/* Icon Styles */
+
+.icon .fa-arrow-down {
+  width: 10px;
+  height: 27px;
+  top: 5px;
+  left: 14px;
+  background: hsl(0, 0, 20);
+}
+
+.icon .fa-arrow-down::before {
+  width: 6px;
+  height: 6px;
+  bottom: -1px;
+  left: -3px;
+  border-color: hsl(0, 0, 20);
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(45deg);
+}
+
+.icon .fa-user {
+  width: 20px;
+  height: 10px;
+  bottom: 5px;
+  left: 5px;
+  box-shadow: 0 0 0 2px hsl(0, 0, 20) inset;
+  border-radius: 6px 6px 3px 3px;
+}
+
+.icon .fa-user::before {
+  width: 10px;
+  height: 10px;
+  top: -9px;
+  left: 5px;
+  box-shadow: 0 0 0 2px hsl(0, 0, 20) inset;
+  border-radius: 50%;
+}
+
+.icon .fa-envelope {
+  width: 20px;
+  height: 12px;
+  top: 9px;
+  left: 5px;
+  box-shadow: 0 0 0 2px hsl(0, 0, 20) inset;
+  border-radius: 3px;
+}
+
+.icon .fa-envelope::before,
+.icon .fa-envelope::after {
+  width: 11px;
+  height: 2px;
+  top: 4px;
+  background: hsl(0, 0, 20);
+}
+
+.icon .fa-envelope::before {
+  left: 0;
+  transform: rotate(30deg);
+}
+
+.icon .fa-envelope::after {
+  right: 0;
+  transform: rotate(-30deg);
+}
+
+
+.icon .fa-comments{
+    width: 20px;
+    height: 12px;
+    top: 9px;
+    left: 5px;
+    box-shadow: 0 0 0 2px hsl(0, 0, 20) inset;
+    border-radius: 3px;
+  }
+  
+  .icon .fa-comments::before,
+  .icon .fa-comments::after {
+    width: 11px;
+    height: 2px;
+    top: 4px;
+    background: hsl(0, 0, 20);
+  }
+  
+  .icon .fa-comments::before {
+    left: 0;
+    transform: rotate(30deg);
+  }
+  
+  .icon .fa-comments::after {
+    right: 0;
+    transform: rotate(-30deg);
+  }
+  
+
+.icon .fa-lock {
+  width: 20px;
+  height: 16px;
+  top: 9px;
+  left: 5px;
+  box-shadow: 0 0 0 2px hsl(0, 0, 20) inset;
+  border-radius: 3px;
+}
+
+.icon .fa-lock::before {
+  width: 8px;
+  height: 8px;
+  top: -4px;
+  left: 4px;
+  border: 2px solid transparent;
+  border-top: 2px solid hsl(0, 0, 20);
+  border-right: 2px solid hsl(0, 0, 20);
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+
+.icon .fa-lock::after {
+  width: 6px;
+  height: 7px;
+  top: 4px;
+  left: 7px;
+  box-shadow: 0 0 0 2px hsl(0, 0, 20) inset;
+}
+
+.icon .fa-heart {
+  width: 50px;
+  height: 50px;
+  top: 11px;
+  left: 7px;
+  background: hsl(9, 100, 60);
+ 
+}
+
+.icon .fa-heart::before,
+.icon .fa-heart::after {
+    width: 50px;
+    height: 50px;
+  border-radius: 50%;
+  background: hsl(9, 100, 60);
+}
+
+.icon .fa-heart::before {
+  left: -6px;
+}
+
+.icon .fa-heart::after {
+  top: -6px;
+}
+.thanktext{
+    margin-left: 17px;    
+    margin-right: auto;
+    margin-top: 2px;
+    font-size: 25px;
+    top: -1%;
+}

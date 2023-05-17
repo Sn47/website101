@@ -11,3 +11,5 @@ document.querySelector('#cart-btn').onclick = () =>{
     searchForm.classList.remove('active');
     cartItem.classList.toggle('active');
 }
+
+

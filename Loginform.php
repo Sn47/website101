@@ -52,13 +52,12 @@ session_start();
             <div class="right">
                 <div class="signuphead">
                     <h1>Log in </h1>
-                    <p class="firstp">This is not a real online service! You know you need something like this in your
-                        life to help you realize your deepest dreams. Sign up now to get started.</p>
+                    <p class="firstp">Soghat, those sly little devils, always know how to make an entrance and steal the show, leaving us grinning like mischievous accomplices..</p>
                     <p class="secondp"><br>You know you want to.</p>
                 </div>
                 <div>
                     <div class="form">
-                        <h1 class="formhead">Let's do this!</h1>
+                        <h2 class="formhead">Come have some Soghat.</h2>
                         <form id="myform" method="POST" enctype="multipart/form-data ">
                             <label for="email">Email
                                 <input type="email" id="email" name="email" required autocomplete="off">
@@ -82,7 +81,7 @@ session_start();
                     <a href="forgotPassword.php">Forgot Password?</a>
                 </div>
                 <div class="signupbutton">
-                    <button zid="signupbutton" type="submit" form="myform"><a href="mainpage.php">Log in</a></button>
+                    <button zid="signupbutton" type="submit" form="myform">Log in</button>
                     <p>Don't have an account? Sign up now <a href="signupform.php">Sign up</a> </p>
                 </div>
             </div>

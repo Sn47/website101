@@ -57,13 +57,13 @@ session_start();
             <div class="right">
                 <div class="signuphead">
                     <h1>Sign up</h1>
-                    <p class="firstp">This is not a real online service! You know you need something like this in your
-                        life to help you realize your deepest dreams. Sign up now to get started.</p>
+                    <p class="firstp">
+Gifts, like playful accomplices, possess the secret art of turning ordinary moments into dazzling adventures, leaving us smirking with delight and mischief.</p>
                     <p class="secondp"><br>You know you want to.</p>
                 </div>
                 <div>
                     <div class="form">
-                        <h1 class="formhead">Let's do this!</h1>
+                        <h2 class="formhead">Go ahead , a sweet is always good </h2>
                         <form id="myform" method="POST">
                             <label for="firstname">First Name
                                 <input type="text" id="firstname" name="firstname" required>
@@ -103,7 +103,7 @@ session_start();
                     <a href="forgotPassword.php">Forgot Password?</a>
                 </div>
                 <div class="signupbutton">
-                    <button id="signupbutton" type="submit" form="myform"><a href="mainage.html">Sign up</a></button>
+                    <button id="signupbutton" type="submit" form="myform">Sign up</button>
                     <p>Already have an account?<a href="loginform.php">Log in</a> </p>
                 </div>
             </div>
