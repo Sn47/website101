@@ -19,6 +19,21 @@ if(isset($_SESSION['user_id'])){
                 echo "<script>alert('Successfully Deleted From Cart');</script>";
             }
         }
+        else if(isset($_POST['searchSubmit']) && isset($_POST['search-box'])){
+            $searchBar = $_POST['search-box'];
+            
+            if(empty($searchBar)){
+                echo "<script>alert('Search Box is empty');</script>";
+            }
+            else{
+                $search = mysqli_real_escape_string($con,$_POST['search-box']);
+                header ("Location: explore.php?category=".$search."");
+                
+
+            }
+        }
+
+
     }
 ?>
 <link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
@@ -60,9 +75,12 @@ if(isset($_SESSION['user_id'])){
         <div class="fas fa-bars" id="menu-btn"></div>
     </div>
     <div class="search-form">
-        <input type="search" id="search-box" placeholder="search here...">
-        <label for="search-box" class="fas fa-search"></label>
-
+        <form method="POST" id="searchForm">
+            <input type="search" name="search-box" id="search-box" placeholder="search here...">
+            <button type="submit" value="" name="searchSubmit" form="searchForm">
+                <icon for="search-box" class="fas fa-search"></icon>
+            </button>
+        </form>
     </div>
     
     <!-- <div class="cart-item-container">

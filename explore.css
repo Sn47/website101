@@ -51,8 +51,7 @@ body {
   padding: 0%;
   justify-content: center;
   height: 99vh;
-   background-color: #000000; 
-  
+  background-color: #000000;
 }
 .mainimage {
   margin-left: 150px;
@@ -174,7 +173,6 @@ body {
 }
 .wrapper .container .bottom .left .buy i {
   font-size: 30px;
-  padding: 30px;
   color: #000000;
   transition: transform 0.5s;
 }
@@ -346,7 +344,6 @@ body {
   transform: translateY(0);
 }
 
-
 .products {
   margin-top: 25px;
 }
@@ -356,6 +353,12 @@ body {
 }
 .buy button {
   cursor: pointer;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: white;
+  display: block;
+  margin-top: auto;
 }
 .quanDiv {
   display: flex;
@@ -369,4 +372,11 @@ body {
 }
 .buy:hover {
   background-color: #000000;
+}
+.noProFound {
+  display: none;
+  color: white;
+  font-size: 30px;
+  margin-left: 20px;
+  margin-top: 40px;
 }

@@ -403,3 +403,6 @@ body {
   margin-left: 10px;
   height: 80px;
 }
+.column h2 {
+  color: black;
+}

@@ -3,25 +3,28 @@ session_start();
 include ("connection.php");
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if($_SESSION['user_id'] == 0){
-            echo '<script>alert("Kindly Login First");</script>';
-        }
-        else{
-            if(isset($_POST['quantity'])){
-                if(!empty($_POST['quantity'])){
-                    $quan = $_POST['quantity'];
-                    $proId = $_POST['proId'];
-                    $query = "insert into addtocart values ('".$_SESSION['user_id']."','$proId','$quan')";
-                    if(!mysqli_query($con,$query)){
-                        echo 'Failed to add to Cart';
-                    }
-                    else{
-                        echo '<script>alert("Successfully Added to Cart");</script>';
-                    }
-                    
-                }
+        if(isset($_POST['proButt'])){
+            if($_SESSION['user_id'] == 0){
+                echo '<script>alert("Kindly Login First");</script>';
             }
+            else{
+                if(isset($_POST['quantity'])){
+                    if(!empty($_POST['quantity'])){
+                        $quan = $_POST['quantity'];
+                        $proId = $_POST['proId'];
+                        $query = "insert into addtocart values ('".$_SESSION['user_id']."','$proId','$quan')";
+                        if(!mysqli_query($con,$query)){
+                            echo 'Failed to add to Cart';
+                        }
+                        else{
+                            echo '<script>alert("Successfully Added to Cart");</script>';
+                        }
+                        
+                    }
+                }
+            }    
         }
+        
         
     }
 
@@ -43,6 +46,9 @@ include ("connection.php");
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <title>Explore</title>
+        <script type='text/javascript'
+            src='https://platform-api.sharethis.com/js/sharethis.js#property=64651b351b837f0019d42300&product=inline-share-buttons'
+            async='async'></script>
     </head>
 
     <body>
@@ -50,12 +56,27 @@ include ("connection.php");
           require_once 'header.php';
         ?>
         <section>
-
+            <div class="noProFound" id="noProFound">
+                <h1>No Product Was Found</h1>
+            </div>
             <div class="proSec">
                 <?php
 
                 if($_GET['category'] == 'all'){
-                    $query = "select * from products";
+                    $query = "select * from products";   
+                }
+                else if($_GET['category'] == 'pakistan'){
+                    $query = "select * from products where Country = 'Pakistan'";
+                }
+                else if($_GET['category'] == 'lahore'){
+                    $query = "select * from products where City = 'Lahore'";
+                }
+                else if($_GET['category'] == 'premium'){
+                    $query = "select * from products where Price > 1000";
+                }
+                else{
+                    $search = $_GET['category'];
+                    $query = "Select * from products where Name LIKE '%$search%' OR City LIKE '%$search%' OR Detail LIKE '%$search%' OR History LIKE '%$search%' OR Ingredients LIKE '%$search%'";
                     
                 }
                 $result = mysqli_query($con,$query);
@@ -63,10 +84,12 @@ include ("connection.php");
                     echo 'Could Not Fetch all products';
                 }
                 else{
-                    $counter = 0;
-                    while($row = mysqli_fetch_assoc($result)){
-                
-                    if($counter % 3 == 0) echo /*html */'<div class="products">';
+                    if(mysqli_num_rows($result) > 0){    
+                        $counter = 0;
+                        echo '<script>getElementsByClassName("noProFound").style.visibility="hidden"</script>';
+                        while($row = mysqli_fetch_assoc($result)){
+                    
+                        if($counter % 3 == 0) echo /*html */'<div class="products">';
             ?>
                 <div class=" wrapper">
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($row['img1']) ?>" alt="gulab jamun">
@@ -75,7 +98,7 @@ include ("connection.php");
                         <div class="bottom">
                             <div class="left">
 
-                                <form method="POST" id="myform<?php echo $row['Pro_Id'] ?>"
+                                <form style="height:100%;" method="POST" id="myform<?php echo $row['Pro_Id'] ?>"
                                     enctype="multipart/form-data ">
                                     <div class="details">
                                         <h1><?php echo $row['Name'] ?></h1>
@@ -86,10 +109,12 @@ include ("connection.php");
                                         </div>
 
                                     </div>
+                                    <!-- ShareThis BEGIN -->
+                                    <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
 
                                     <input type="hidden" id="proId" name="proId" value="<?php echo $row['Pro_Id'] ?>">
                                     <div class="buy"><button form="myform<?php echo $row['Pro_Id'] ?>" type="submit"
-                                            name="submit"><i class="fas fa-shopping-cart" id="cart-btn"></i></button>
+                                            name="proButt"><i class="fas fa-shopping-cart" id="cart-btn"></i></button>
                                     </div>
                                 </form>
 
@@ -113,14 +138,22 @@ include ("connection.php");
 
 
                 <?php
-                $counter++;
-                if($counter % 3 == 0) echo /*html */'</div>';
-                
+                    $counter++;
+                    if($counter % 3 == 0) echo /*html */'</div>';
+                    
+                    }
+                    
+                }
+                else{
+                    echo "<script>
+                    const NoFound = document.querySelector('#noProFound');
+                    NoFound.style.display='block';</script>";
                 }
             }
             ?>
+
             </div>
-            <button class="orderbutton">Show more</button>
+
         </section>
         <?php
         
