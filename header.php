@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $login = false;
 if(isset($_SESSION['user_id'])){
         if($_SESSION['user_id'] != 0 ) $login = true;
@@ -7,17 +7,26 @@ if(isset($_SESSION['user_id'])){
     else{
         $_SESSION['user_id'] = 0;
     }
-?>
 
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        if(isset($_POST['cartSubmit'])){
+            $proId = $_POST['proId'];
+            $query = "Delete from addtocart where UserId = '".$_SESSION['user_id']."' AND ProId = '$proId'";
+            if(!mysqli_query($con,$query)){
+                echo "Could Not delete from cart";
+            }
+            else{
+                echo "<script>alert('Successfully Deleted From Cart');</script>";
+            }
+        }
+    }
+?>
+<link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
 <header>
     <a href="mainpage.php" style="padding : 25px"> <img class="logo" src="orangeone.png"
             alt="the odin project logo"></a>
 
     <nav class="navbar">
-
-
-
-
         <button class="raise"><a href="#review" style="padding : 25px">REVIEW</a> </button>
         <button class="raise"><a href="about.php" style="padding : 25px">ABOUT</a> </button>
         <button class="raise"><a href="explore.php?category=all" style="padding : 25px">EXPLORE</a></button>
@@ -64,30 +73,41 @@ if(isset($_SESSION['user_id'])){
             </div> -->
     <div class="cart-item-container">
         <h1>Cart</h1>
+        <?php
+            if($_SESSION['user_id'] != 0){
+                
+            
+                $query = "Select Pro_Id,a.Quantity,Name,Price from addtocart a,products p,users u where u.UserId = ".$_SESSION['user_id']." AND a.UserId = ".$_SESSION['user_id']." AND a.ProId = p.Pro_Id";
+                $result = mysqli_query($con,$query); 
+                if($result){
+                    while($row = mysqli_fetch_assoc($result)){
+                        ?>
         <div class="cart-item">
-            <span class="fas fa-times"></span>
+            <form method="POST" id="myform<?php echo $row['Pro_Id'] ?>">
+
+                <button form="myform<?php echo $row['Pro_Id'] ?>" type="submit" name="cartSubmit"><span
+                        class="fas fa-times"></span></button>
+                <input type="hidden" id="proId" name="proId" value="<?php echo $row['Pro_Id'] ?>">
+            </form>
+
             <img src="gulab.jpg" alt="gulabjamun">
             <div class="content">
-                <h3>Gulab jamun</h3>
-                <div class="price">Rs10/-</div>
+                <h3><?php echo $row['Name'] ?></h3>
+                <div class="price">Rs.<?php echo $row['Price'] ?>-/</div>
+                <div style="font-size:13px;" class="quantity">Quantity: <?php echo $row['Quantity'] ?>
+                </div>
             </div>
         </div>
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="jalebi.jpeg" alt="gulabjamun">
-            <div class="content">
-                <h3>Jalebi</h3>
-                <div class="price">Rs15/-</div>
-            </div>
-        </div>
-        <div class="cart-item">
-            <span class="fas fa-times"></span>
-            <img src="lado.jpg" alt="gulabjamun">
-            <div class="content">
-                <h3>Lado</h3>
-                <div class="price">Rs5/-</div>
-            </div>
-        </div>
-        <button class="check">CHECK OUT!</button>
+        <?php
+                    }
+                }
+            }
+        
+        ?>
+
+        <?php 
+        if($_SESSION['user_id'] != 0) 
+            echo '<button class="check">CHECK OUT!</button>';
+        ?>
     </div>
 </header>

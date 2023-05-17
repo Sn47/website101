@@ -1,5 +1,5 @@
 <?php
-
+session_start();
     
     include("connection.php");
     include("functions.php");
@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
+
         <link rel="stylesheet" href="temp.css?v=<?php echo time(); ?>">
         <link rel=”stylesheet”
             href=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”rel=”nofollow”
@@ -42,7 +42,7 @@
                     <div class="sidewrite" data-aos="fade">
                         <h1>Soghat </h1>
                         <p class="discrip">Unique Traditional and Regional Food and Desserts , so called Soghat </p>
-                        <button class="orderbutton"><a href="explore.php?category=all" >ORDER NOW</a></button>
+                        <button class="orderbutton"><a href="explore.php?category=all">ORDER NOW</a></button>
                     </div>
 
 
@@ -64,7 +64,7 @@
                 </div>
                 <div class="row">
                     <div class="column">
-                        <div class="tilt-box-wrap" >
+                        <div class="tilt-box-wrap">
                             <span class="t_over"></span>
                             <span class="t_over"></span>
                             <span class="t_over"></span>

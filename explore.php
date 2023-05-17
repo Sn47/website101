@@ -1,14 +1,28 @@
 <?php
-    include ("connection.php");
+session_start();
+include ("connection.php");
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if(!isset($_POST['quantity'])){
-            ?>
-alert("No Quantity Added");
-
-<?php
-        
+        if($_SESSION['user_id'] == 0){
+            echo '<script>alert("Kindly Login First");</script>';
         }
+        else{
+            if(isset($_POST['quantity'])){
+                if(!empty($_POST['quantity'])){
+                    $quan = $_POST['quantity'];
+                    $proId = $_POST['proId'];
+                    $query = "insert into addtocart values ('".$_SESSION['user_id']."','$proId','$quan')";
+                    if(!mysqli_query($con,$query)){
+                        echo 'Failed to add to Cart';
+                    }
+                    else{
+                        echo '<script>alert("Successfully Added to Cart");</script>';
+                    }
+                    
+                }
+            }
+        }
+        
     }
 
 
@@ -22,7 +36,7 @@ alert("No Quantity Added");
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="header&footer.css?v=<?php echo time(); ?>">
+
         <link rel="stylesheet" href="explore.css?v=<?php echo time(); ?>">
         <script src="https://kit.fontawesome.com/07ada3bd79.js" crossorigin="anonymous"></script>
 
@@ -36,6 +50,7 @@ alert("No Quantity Added");
           require_once 'header.php';
         ?>
         <section>
+
             <div class="proSec">
                 <?php
 
@@ -59,21 +74,22 @@ alert("No Quantity Added");
                         <div class="top"></div>
                         <div class="bottom">
                             <div class="left">
-                                <form action="POST" id="myform" enctype="multipart/form-data ">
+
+                                <form method="POST" id="myform<?php echo $row['Pro_Id'] ?>"
+                                    enctype="multipart/form-data ">
                                     <div class="details">
                                         <h1><?php echo $row['Name'] ?></h1>
                                         <p>Rs<?php echo $row['Price'] ?>/-</p>
                                         <div class="quanDiv">
-                                            <label for="quantity" required>Quantity</label>
-                                            <input type="number" name="quantity"> </input>
+                                            <label for="quantity">Quantity</label>
+                                            <input type="number" name="quantity" required> </input>
                                         </div>
 
                                     </div>
 
                                     <input type="hidden" id="proId" name="proId" value="<?php echo $row['Pro_Id'] ?>">
-                                    <div class="buy"><button form="myform" type="submit" name="submit"><i
-                                                class="fas fa-shopping-cart" id="cart-btn"></i></button>
-
+                                    <div class="buy"><button form="myform<?php echo $row['Pro_Id'] ?>" type="submit"
+                                            name="submit"><i class="fas fa-shopping-cart" id="cart-btn"></i></button>
                                     </div>
                                 </form>
 
@@ -110,6 +126,36 @@ alert("No Quantity Added");
         
         require_once 'footer.php';
         ?>
+        <section>
+            <div class="third">
+                <script src="script.js"></script>
+                <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                <script>
+                AOS.init({
+                    // Global settings:
+                    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+                    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+                    initClassName: 'aos-init', // class applied after initialization
+                    animatedClassName: 'aos-animate', // class applied on animation
+                    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+                    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+                    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+                    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+
+                    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+                    offset: 120, // offset (in px) from the original trigger point
+                    delay: 0, // values from 0 to 3000, with step 50ms
+                    duration: 400, // values from 0 to 3000, with step 50ms
+                    easing: 'ease-in-out-quart', // default easing for AOS animations
+                    once: false, // whether animation should happen only once - while scrolling down
+                    mirror: true, // whether elements should animate out while scrolling past them
+                    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+                });
+                </script>
+            </div>
+        </section>
     </body>
 
 </html>
