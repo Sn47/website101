@@ -3,25 +3,28 @@ session_start();
 include ("connection.php");
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        if($_SESSION['user_id'] == 0){
-            echo '<script>alert("Kindly Login First");</script>';
-        }
-        else{
-            if(isset($_POST['quantity'])){
-                if(!empty($_POST['quantity'])){
-                    $quan = $_POST['quantity'];
-                    $proId = $_POST['proId'];
-                    $query = "insert into addtocart values ('".$_SESSION['user_id']."','$proId','$quan')";
-                    if(!mysqli_query($con,$query)){
-                        echo 'Failed to add to Cart';
-                    }
-                    else{
-                        echo '<script>alert("Successfully Added to Cart");</script>';
-                    }
-                    
-                }
+        if(isset($_POST['proButt'])){
+            if($_SESSION['user_id'] == 0){
+                echo '<script>alert("Kindly Login First");</script>';
             }
+            else{
+                if(isset($_POST['quantity'])){
+                    if(!empty($_POST['quantity'])){
+                        $quan = $_POST['quantity'];
+                        $proId = $_POST['proId'];
+                        $query = "insert into addtocart values ('".$_SESSION['user_id']."','$proId','$quan')";
+                        if(!mysqli_query($con,$query)){
+                            echo 'Failed to add to Cart';
+                        }
+                        else{
+                            echo '<script>alert("Successfully Added to Cart");</script>';
+                        }
+                        
+                    }
+                }
+            }    
         }
+        
         
     }
 
@@ -57,7 +60,11 @@ include ("connection.php");
                 <?php
 
                 if($_GET['category'] == 'all'){
-                    $query = "select * from products";
+                    $query = "select * from products";   
+                }
+                else{
+                    $search = $_GET['category'];
+                    $query = "Select * from products where Name LIKE '%$search%' OR City LIKE '%$search%' OR Detail LIKE '%$search%' OR History LIKE '%$search%' OR Ingredients LIKE '%$search%'";
                     
                 }
                 $result = mysqli_query($con,$query);
@@ -79,7 +86,7 @@ include ("connection.php");
                         <div class="bottom">
                             <div class="left">
 
-                                <form method="POST" id="myform<?php echo $row['Pro_Id'] ?>"
+                                <form style="height:100%;" method="POST" id="myform<?php echo $row['Pro_Id'] ?>"
                                     enctype="multipart/form-data ">
                                     <div class="details">
                                         <h1><?php echo $row['Name'] ?></h1>
@@ -93,7 +100,7 @@ include ("connection.php");
 
                                     <input type="hidden" id="proId" name="proId" value="<?php echo $row['Pro_Id'] ?>">
                                     <div class="buy"><button form="myform<?php echo $row['Pro_Id'] ?>" type="submit"
-                                            name="submit"><i class="fas fa-shopping-cart" id="cart-btn"></i></button>
+                                            name="proButt"><i class="fas fa-shopping-cart" id="cart-btn"></i></button>
                                     </div>
                                 </form>
 
@@ -121,7 +128,7 @@ include ("connection.php");
                     if($counter % 3 == 0) echo /*html */'</div>';
                     
                     }
-                    echo '<button class="orderbutton">Show more</button>';
+                    
                 }
                 else{
                     echo "<script>
