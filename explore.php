@@ -50,7 +50,9 @@ include ("connection.php");
           require_once 'header.php';
         ?>
         <section>
-
+            <div class="noProFound" id="noProFound">
+                <h1>No Product Was Found</h1>
+            </div>
             <div class="proSec">
                 <?php
 
@@ -63,10 +65,12 @@ include ("connection.php");
                     echo 'Could Not Fetch all products';
                 }
                 else{
-                    $counter = 0;
-                    while($row = mysqli_fetch_assoc($result)){
-                
-                    if($counter % 3 == 0) echo /*html */'<div class="products">';
+                    if(mysqli_num_rows($result) > 0){    
+                        $counter = 0;
+                        echo '<script>getElementsByClassName("noProFound").style.visibility="hidden"</script>';
+                        while($row = mysqli_fetch_assoc($result)){
+                    
+                        if($counter % 3 == 0) echo /*html */'<div class="products">';
             ?>
                 <div class=" wrapper">
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($row['img1']) ?>" alt="gulab jamun">
@@ -113,14 +117,22 @@ include ("connection.php");
 
 
                 <?php
-                $counter++;
-                if($counter % 3 == 0) echo /*html */'</div>';
-                
+                    $counter++;
+                    if($counter % 3 == 0) echo /*html */'</div>';
+                    
+                    }
+                    echo '<button class="orderbutton">Show more</button>';
+                }
+                else{
+                    echo "<script>
+                    const NoFound = document.querySelector('#noProFound');
+                    NoFound.style.display='block';</script>";
                 }
             }
             ?>
+
             </div>
-            <button class="orderbutton">Show more</button>
+
         </section>
         <?php
         
