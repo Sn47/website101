@@ -63,15 +63,13 @@ html {
   display: table;
 }
 
-h1{
+h1 {
   padding: 50px;
   text-align: center;
   background-color: #000000;
   color: white;
   display: inline;
 }
-
-
 
 .title {
   color: grey;
@@ -141,12 +139,12 @@ h1{
 }
 
 .card0 {
-  background: url('ahsan.jpg') center center no-repeat;
+  background: url("images/ahsan.jpg") center center no-repeat;
   background-size: 300px;
 }
 
 .card0:hover {
-  background: url('ahsan.jpg') right center no-repeat;
+  background: url("images/ahsan.jpg") right center no-repeat;
   background-size: 600px;
 }
 
@@ -156,12 +154,12 @@ h1{
 }
 
 .card1 {
-  background: url('ahmad.jpg') center center no-repeat;
+  background: url("images/ahmed.jpg") center center no-repeat;
   background-size: 300px;
 }
 
 .card1:hover {
-  background: url('ahmad.jpg') center center no-repeat;
+  background: url("images/ahmed.jpg") center center no-repeat;
   background-size: 600px;
 }
 
@@ -171,12 +169,12 @@ h1{
 }
 
 .card2 {
-  background: url('https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg') center center no-repeat;
+  background: url("images/ahmad.jpg") center center no-repeat;
   background-size: 300px;
 }
 
 .card2:hover {
-  background: url('https://i.pinimg.com/originals/ee/85/08/ee850842e68cfcf6e3943c048f45c6d1.jpg') left center no-repeat;
+  background: url("images/ahmad.jpg") center center no-repeat;
   background-size: 600px;
 }
 
@@ -186,7 +184,7 @@ h1{
 }
 
 h2 {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: white;
   margin: 20px;
   opacity: 0;
@@ -205,8 +203,8 @@ h2 {
   height: 130px;
   top: 226px;
   width: 50px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
