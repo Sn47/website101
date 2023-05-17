@@ -46,7 +46,9 @@ include ("connection.php");
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
         <title>Explore</title>
-        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=64651b351b837f0019d42300&product=inline-share-buttons' async='async'></script>
+        <script type='text/javascript'
+            src='https://platform-api.sharethis.com/js/sharethis.js#property=64651b351b837f0019d42300&product=inline-share-buttons'
+            async='async'></script>
     </head>
 
     <body>
@@ -62,6 +64,15 @@ include ("connection.php");
 
                 if($_GET['category'] == 'all'){
                     $query = "select * from products";   
+                }
+                else if($_GET['category'] == 'pakistan'){
+                    $query = "select * from products where Country = 'Pakistan'";
+                }
+                else if($_GET['category'] == 'lahore'){
+                    $query = "select * from products where City = 'Lahore'";
+                }
+                else if($_GET['category'] == 'premium'){
+                    $query = "select * from products where Price > 1000";
                 }
                 else{
                     $search = $_GET['category'];
@@ -98,7 +109,8 @@ include ("connection.php");
                                         </div>
 
                                     </div>
-                                     <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+                                    <!-- ShareThis BEGIN -->
+                                    <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
 
                                     <input type="hidden" id="proId" name="proId" value="<?php echo $row['Pro_Id'] ?>">
                                     <div class="buy"><button form="myform<?php echo $row['Pro_Id'] ?>" type="submit"

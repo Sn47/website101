@@ -63,80 +63,87 @@ session_start();
                     </div>
                 </div>
                 <div class="row">
-                    <div class="column">
-                        <div class="tilt-box-wrap">
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <div class="tilt-box">
+                    <a href="explore.php?category=pakistan">
+                        <div class="column">
+                            <div class="tilt-box-wrap">
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <div class="tilt-box">
 
-                                <strong>
-                                    <h2>Pakistan</h2>
-                                </strong>
+                                    <strong>
+                                        <h2>Pakistan</h2>
+                                    </strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="column">
-                        <div class="tilt-box-wrap">
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <div class="tilt-box">
-                                <strong>
-                                    <h2>City wise</h2>
-                                </strong>
+                    </a>
+                    <a href="explore.php?category=lahore">
+                        <div class="column">
+                            <div class="tilt-box-wrap">
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <div class="tilt-box">
+                                    <strong>
+                                        <h2>Lahore</h2>
+                                    </strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="column">
-                        <div class="tilt-box-wrap">
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <div class="tilt-box">
-                                <strong>
-                                    <h2>Tradition wise</h2>
-                                </strong>
+                    </a>
+                    <a href="explore.php?category=sindhi">
+                        <div class="column">
+                            <div class="tilt-box-wrap">
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <div class="tilt-box">
+                                    <strong>
+                                        <h2>Sindhi</h2>
+                                    </strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="column">
-                        <div class="tilt-box-wrap">
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <span class="t_over"></span>
-                            <div class="tilt-box">
-                                <strong>
-                                    <h2>Region wise</h2>
-                                </strong>
+                    </a>
+                    <a href="explore.php?category=premium">
+                        <div class="column">
+                            <div class="tilt-box-wrap">
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <span class="t_over"></span>
+                                <div class="tilt-box">
+                                    <strong>
+                                        <h2>Premium</h2>
+                                    </strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    </a>
 
 
                 </div>
