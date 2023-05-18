@@ -58,11 +58,14 @@ fieldset {
   box-shadow: 0 8px 10px hsl(120, 60, 40);
 }
 
-
+.review{
+  font-size: 20px;
+  color: #fff;
+}
 
 h1,
 h2 {
-  position: absolute;
+  
   left: 50%;
   transform: translateX(-50%);
   font-family: sans-serif;
@@ -121,7 +124,7 @@ form {
 
 form fieldset {
   position: absolute;
-  width: 400px;
+  width: 450px;
   height: 60px;
   background: hsl(0, 0%, 0%);
   border-radius: 20px;

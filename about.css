@@ -174,8 +174,8 @@ h1 {
 }
 
 .card2:hover {
-  background: url("images/ahmad.jpg") left center no-repeat;
-  background-size: 600px;
+  background: url("images/ahmad.jpg") center center no-repeat;
+  background-size: 400px;
 }
 
 .card2:hover h2,

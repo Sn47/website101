@@ -56,13 +56,17 @@ include ("connection.php");
           require_once 'header.php';
         ?>
         <section>
+           
             <div class="noProFound" id="noProFound">
                 <h1>No Product Was Found</h1>
             </div>
+           
             <div class="proSec">
+            
                 <?php
-
+            
                 if($_GET['category'] == 'all'){
+                    
                     $query = "select * from products";   
                 }
                 else if($_GET['category'] == 'pakistan'){
@@ -92,7 +96,8 @@ include ("connection.php");
                         if($counter % 3 == 0) echo /*html */'<div class="products">';
             ?>
                 <div class=" wrapper">
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($row['img1']) ?>" alt="gulab jamun">
+                   <img src="data:image/jpeg;base64,<?php echo base64_encode($row['img1']) ?>" alt="gulab jamun">
+               
                     <div class="container">
                         <div class="top"></div>
                         <div class="bottom">
@@ -107,10 +112,11 @@ include ("connection.php");
                                             <label for="quantity">Quantity</label>
                                             <input type="number" name="quantity" required> </input>
                                         </div>
-
+                                        <br><br>
+                                        <div class="sharethis-inline-share-buttons"></div>
                                     </div>
                                     <!-- ShareThis BEGIN -->
-                                    <div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+                                   <!-- ShareThis END -->
 
                                     <input type="hidden" id="proId" name="proId" value="<?php echo $row['Pro_Id'] ?>">
                                     <div class="buy"><button form="myform<?php echo $row['Pro_Id'] ?>" type="submit"

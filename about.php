@@ -23,9 +23,9 @@ include ("connection.php")
 
 
         <div class="about-section">
-            <h1>About Us Page</h1>
-            <p>Some text about who we are and what we do.</p>
-            <p>Resize the browser window to see that this page is responsive by the way.</p>
+            <h1>About Us </h1>
+            <p>Made  this site to promote the concept of soghat</p>
+            <p>We hope this helps people spread love through sweet.</p>
 
 
             <h2 style="text-align:center">Our Team</h2>
