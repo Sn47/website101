@@ -32,7 +32,16 @@ if(isset($_SESSION['user_id'])){
 
             }
         }
+        else if(isset($_POST['checkOut'])){
+            $query = "Delete from addtocart ";
+            if(!mysqli_query($con,$query)){
+                echo 'Could not run query';
+            }
+            else{
 
+                echo "<script>alert('Check Out Done');</script>";
+            }
+        }
 
     }
 ?>
@@ -82,7 +91,7 @@ if(isset($_SESSION['user_id'])){
             </button>
         </form>
     </div>
-    
+
     <!-- <div class="cart-item-container">
                 <h1>CART</h1>
             </div>
@@ -125,7 +134,7 @@ if(isset($_SESSION['user_id'])){
 
         <?php 
         if($_SESSION['user_id'] != 0) 
-            echo '<button class="check">CHECK OUT!</button>';
+            echo '<form method="POST" id="checkForm"><button form="checkForm" type="submit" name= "checkOut" class="check">CHECK OUT!</button></form>';
         ?>
     </div>
 </header>
