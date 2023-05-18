@@ -112,9 +112,8 @@ include ("connection.php");
                                             <label for="quantity">Quantity</label>
                                             <input type="number" name="quantity" required> </input>
                                         </div>
-                                        <br><br>
-                                        <div class="sharethis-inline-share-buttons"></div>
-                                    </div>
+                                       
+                                        <div class="sharethis-inline-share-buttons"></div>                                   </div>
                                     <!-- ShareThis BEGIN -->
                                    <!-- ShareThis END -->
 

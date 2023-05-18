@@ -156,7 +156,7 @@ body {
 
 .wrapper .container .bottom .left .details {
   padding-left: 5px;
-  padding-top: 20px;
+  padding-top: 0px;
   float: left;
   width: calc(70% - 40px);
 }
@@ -362,9 +362,10 @@ body {
   margin-top: auto;
 }
 .quanDiv {
-  display: flex;
+  padding-right: 35px;
 }
 .quanDiv input {
+ 
   width: 70px;
   margin-left: 9px;
   border: 1px solid black;
@@ -382,5 +383,5 @@ body {
   margin-top: 40px;
 }
 .sharethis-inline-share-buttons{
-
+  display: none;
 }
