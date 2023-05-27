@@ -29,7 +29,7 @@ include ("connection.php");
                         
                     }
                     else{
-                        $transport = Transport::fromDsn('smtp://senderemail@gmail.com:twostepverfiserver@smtp.gmail.com:587');
+                        $transport = Transport::fromDsn('smtp://senderemail@gmail.com:googleapppassword@smtp.gmail.com:587');
                         $mailer = new Mailer($transport); 
                         $email = (new Email());
                         $email->from('senderemail@gmail.com');
